@@ -38,6 +38,19 @@ fi
 # Store the Python server process ID
 SERVER_PID=$!
 
+# Wait for Flask server to start
+echo "Waiting for Flask server to start..."
+sleep 3
+
+# Seed the database
+echo "Seeding database..."
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+if [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
+    py utils/seed_database.py
+else
+    python3 utils/seed_database.py
+fi
+
 echo "Starting client (Astro)..."
 cd ../client || {
     echo "Error: client directory not found"
