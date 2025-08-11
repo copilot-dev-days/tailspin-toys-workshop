@@ -19,6 +19,12 @@ def create_games():
     app = create_app()
     
     with app.app_context():
+        # Check if data already exists
+        existing_games = Game.query.count()
+        if existing_games > 0:
+            print(f"Database already contains {existing_games} games. Skipping seeding.")
+            return
+            
         # Track which categories and publishers have been created
         categories = {}  # name -> category object
         publishers = {}  # name -> publisher object
