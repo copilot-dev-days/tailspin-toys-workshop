@@ -18,5 +18,6 @@
     "chat.agent.enabled": true,
     "chat.tools.autoApprove": true,
     "chat.agent.maxRequests": 100,
-    "terminal.integrated.shellIntegration.enabled": true
+    "terminal.integrated.shellIntegration.enabled": true,
+    "github.copilot.chat.advanced.welcomePageHint.enabled": false
 }
