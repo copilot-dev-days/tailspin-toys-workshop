@@ -1,8 +1,8 @@
 # Tailspin Toys Crowd Funding Development Guidelines
 
-This is a crowdfunding platform for games with a developer theme. The application uses a Flask backend API with SQLAlchemy ORM for database interactions, and an Astro/Svelte frontend with Tailwind CSS for styling. Please follow these guidelines when contributing:
+This is a crowdfunding platform for games with a developer theme. The application uses a Flask backend API with SQLAlchemy ORM for database interactions, and an Astro/Svelte frontend with Tailwind CSS for styling. Follow these guidelines when contributing:
 
-## Code standards
+## Project standards
 
 ### Scripts and tasks
 
@@ -11,26 +11,26 @@ This is a crowdfunding platform for games with a developer theme. The applicatio
 ### Required Before Each Commit
 
 - Run Python tests to ensure backend functionality
-- For frontend changes, run builds in the client directory to verify build success and the end-to-end tests, to ensure everything works correctly
-- When making API changes, update and run the corresponding tests to ensure everything works correctly
+- For frontend changes, run the end to end tests created in Playwright
+- When making API changes, update and run the corresponding unit tests to ensure everything works correctly
 - When updating models, ensure database migrations are included if needed
-- When adding new functionality, make sure you update the README
-- Make sure all guidance in the Copilot Instructions file is updated with any relevant changes, including to project structure and scripts, and programming guidance
+- When adding new functionality, update the README
+- Updated guidance in the Copilot Instructions file is with any relevant changes, including to project structure and scripts, and programming guidance
 
 ### Python and Flask Patterns
 
 - Use SQLAlchemy models for database interactions
 - Use Flask blueprints for organizing routes
 - Follow RESTful API design principles
-- Tests are written using unittest
+- Tests are written using `unittest`
 - Use type hints for return values and function parameters
 
 ### Svelte and Astro Patterns
 
-- Use Svelte for interactive components
-- Follow Svelte's reactive programming model
+- Use Svelte for interactive components, following Svelte's reactive programming model
 - Create reusable components when functionality is used in multiple places
 - Use Astro for page routing and static content
+- End to end tests are written in Playwright to confirm functionality
 
 ### Styling
 
