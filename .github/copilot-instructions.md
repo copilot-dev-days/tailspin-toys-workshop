@@ -53,7 +53,8 @@ This is a crowdfunding platform for games with a developer theme. The applicatio
     - `scripts/setup-env.sh`: Performs installation of all Python and Node dependencies
     - `scripts/run-server-tests.sh`: Calls setup-env, then runs all Python tests
     - `scripts/start-app.sh`: Calls setup-env, then starts both backend and frontend servers
-    - `scripts/run-e2e-tests.sh`: Calls setup-env, starts both servers, then runs end-to-end tests using Playwright
+    - `scripts/start-app-silent.sh`: Silent version of start-app.sh for e2e tests (suppresses server output)
+    - `scripts/run-e2e-tests.sh`: Uses Playwright's webServer config to automatically start servers, then runs end-to-end tests using Playwright
 
 ## MCP servers
 

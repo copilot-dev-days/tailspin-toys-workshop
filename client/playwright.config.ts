@@ -42,9 +42,9 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: '../scripts/start-app.sh',
+    command: '../scripts/start-app-silent.sh',
     url: 'http://localhost:4321',
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: true,
     timeout: 120 * 1000, // 2 minutes to allow for setup
   },
 });
