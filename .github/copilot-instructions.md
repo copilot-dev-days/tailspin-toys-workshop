@@ -55,6 +55,11 @@ This is a crowdfunding platform for games with a developer theme. The applicatio
     - `scripts/start-app.sh`: Calls setup-env, then starts both backend and frontend servers
     - `scripts/run-e2e-tests.sh`: Calls setup-env, starts both servers, then runs end-to-end tests using Playwright
 
+## MCP servers
+
+- GitHub MCP server for interacting with the repository
+- Playwright MCP server for creating Playwright tests and interacting with a browser
+
 ## Repository Structure
 
 - `server/`: Flask backend code
