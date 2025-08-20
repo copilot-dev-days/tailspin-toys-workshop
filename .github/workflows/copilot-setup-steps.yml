@@ -35,3 +35,7 @@ jobs:
       - name: Install JavaScript dependencies
         working-directory: ./client
         run: npm ci
+
+      - name: Install Playwright browsers
+        working-directory: ./client
+        run: npx playwright install --with-deps
