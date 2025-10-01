@@ -1,20 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    
-    interface Game {
-        id: number;
-        title: string;
-        description: string;
-        publisher: {
-            id: number;
-            name: string;
-        } | null;
-        category: {
-            id: number;
-            name: string;
-        } | null;
-        starRating: number | null;
-    }
+    import type { Game } from "../types/game";
 
     // Accept either a game object or a gameId
     export let game: Game | undefined = undefined;

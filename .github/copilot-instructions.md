@@ -31,6 +31,7 @@ This is a crowdfunding platform for games with a developer theme. The applicatio
 - Create reusable components when functionality is used in multiple places
 - Use Astro for page routing and static content
 - End to end tests are written in Playwright to confirm functionality
+- Use centralized TypeScript interfaces from `client/src/types/` for type safety across components
 
 ### Styling
 
@@ -73,6 +74,7 @@ This is a crowdfunding platform for games with a developer theme. The applicatio
   - `src/layouts/`: Astro layout templates
   - `src/pages/`: Astro page routes
   - `src/styles/`: CSS and Tailwind configuration
+  - `src/types/`: Centralized TypeScript interface definitions
 - `scripts/`: Development and deployment scripts
 - `data/`: Database files
 - `docs/`: Project documentation
