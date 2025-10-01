@@ -5,6 +5,11 @@
 
 /**
  * Represents a game publisher
+ * @example
+ * const publisher: Publisher = {
+ *   id: 1,
+ *   name: "CodeForge Studios"
+ * };
  */
 export interface Publisher {
     id: number;
@@ -13,6 +18,11 @@ export interface Publisher {
 
 /**
  * Represents a game category
+ * @example
+ * const category: Category = {
+ *   id: 1,
+ *   name: "Strategy"
+ * };
  */
 export interface Category {
     id: number;
@@ -21,6 +31,25 @@ export interface Category {
 
 /**
  * Represents a game as returned by the API
+ * @example
+ * const game: Game = {
+ *   id: 1,
+ *   title: "DevOps Dominion",
+ *   description: "A strategic game about DevOps...",
+ *   publisher: { id: 1, name: "CodeForge Studios" },
+ *   category: { id: 1, name: "Strategy" },
+ *   starRating: 4.7
+ * };
+ * 
+ * // Publisher and category can be null
+ * const gameWithoutMetadata: Game = {
+ *   id: 2,
+ *   title: "Indie Game",
+ *   description: "An independent game",
+ *   publisher: null,
+ *   category: null,
+ *   starRating: null
+ * };
  */
 export interface Game {
     id: number;
