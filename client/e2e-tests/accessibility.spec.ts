@@ -171,9 +171,10 @@ test.describe('Accessibility Tests', () => {
 
   test('semantic HTML - main landmarks should be present', async ({ page }) => {
     await page.goto('/');
+    await page.waitForSelector('[data-testid="games-grid"]', { timeout: 10000 });
     
-    // Check for header landmark
-    const header = page.locator('header');
+    // Check for header landmark (use first() to avoid strict mode violation from dev tools)
+    const header = page.locator('header').first();
     await expect(header).toBeVisible();
     
     // Check for main landmark

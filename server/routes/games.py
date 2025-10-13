@@ -1,4 +1,4 @@
-from flask import jsonify, Response, Blueprint
+from flask import jsonify, Response, Blueprint, request
 from models import db, Game, Publisher, Category
 from sqlalchemy.orm import Query
 
@@ -18,11 +18,25 @@ def get_games_base_query() -> Query:
 
 @games_bp.route('/api/games', methods=['GET'])
 def get_games() -> Response:
-    # Use the base query for all games
-    games_query = get_games_base_query().all()
+    # Get filter parameters from query string
+    publisher_id = request.args.get('publisher_id', type=int)
+    category_id = request.args.get('category_id', type=int)
+    
+    # Start with base query
+    games_query = get_games_base_query()
+    
+    # Apply filters if provided
+    if publisher_id:
+        games_query = games_query.filter(Game.publisher_id == publisher_id)
+    
+    if category_id:
+        games_query = games_query.filter(Game.category_id == category_id)
+    
+    # Execute query
+    games_result = games_query.all()
     
     # Convert the results using the model's to_dict method
-    games_list = [game.to_dict() for game in games_query]
+    games_list = [game.to_dict() for game in games_result]
     
     return jsonify(games_list)
 
