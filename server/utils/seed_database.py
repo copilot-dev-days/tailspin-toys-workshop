@@ -3,14 +3,20 @@ import os
 import random
 from flask import Flask
 from models import db, Category, Game, Publisher
-from utils.database import init_db
+from utils.database import get_connection_string
 
 def create_app():
     """Create and configure Flask app for database operations"""
     app = Flask(__name__)
 
-    # Initialize the database with the app
-    init_db(app)
+    # Configure and initialize the database
+    app.config['SQLALCHEMY_DATABASE_URI'] = get_connection_string()
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    db.init_app(app)
+    
+    # Create tables
+    with app.app_context():
+        db.create_all()
     
     return app
 
@@ -19,12 +25,6 @@ def create_games():
     app = create_app()
     
     with app.app_context():
-        # Check if data already exists
-        existing_games = Game.query.count()
-        if existing_games > 0:
-            print(f"Database already contains {existing_games} games. Skipping seeding.")
-            return
-            
         # Track which categories and publishers have been created
         categories = {}  # name -> category object
         publishers = {}  # name -> publisher object
