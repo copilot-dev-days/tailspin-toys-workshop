@@ -3,7 +3,32 @@ name: code-review
 description: Guidelines for reviewing code in this project. Use this when asked to review code, audit the codebase, check for best practices, or validate code quality.
 ---
 
-# Code Review Guidelines
+# Code Review
+
+## Overview
+
+You are performing a code review of the application or the subsection as indicated by the user. The goal here is to provide just the review and feedback, with suggestions on what should be updated. The generated result should follow this pattern:
+
+```markdown
+- **Overall notes**
+    - item
+    - item
+    - item
+- **High impact fixes**
+    - item
+    - item
+    - item
+- **Medium impact fixes**
+    - item
+    - item
+    - item
+- **Low impact fixes**
+    - item
+    - item
+    - item
+```
+
+Each piece of feedback should be a single sentence. If more details are needed, create a sub-bullet with that information. Don't perform any actions unless the user tells you to actually implement them.
 
 ## Review Philosophy
 
