@@ -3,127 +3,63 @@ name: testing
 description: Guidelines for running and writing unit and E2E tests. Use this when asked to run tests, write tests, debug test failures, or verify code changes.
 ---
 
-# Testing Guidelines for Tailspin Toys
+# Testing Guidelines
 
-This skill provides centralized best practices for all testing in the project.
+## Core Philosophy
+
+### Test Core Functionality, Not Everything
+
+- Focus on critical user paths and essential business logic
+- Prioritize tests that catch regressions in key features
+- Avoid over-testing trivial functionality or implementation details
+- Ask: "If this breaks, will users notice?" - if yes, test it
+
+### Tests Must Pass Before Commit/Merge
+
+- All existing tests must pass before committing changes
+- Never skip or disable tests without explicit justification
+- Broken tests block merges - fix them, don't ignore them
+- Run the full test suite, not just tests for changed code
+
+### Tests Are Production Code
+
+- Apply the same code quality standards to tests as production code
+- Use clear, descriptive names that explain what is being tested
+- Keep tests maintainable, readable, and well-organized
+- Include type hints, proper formatting, and meaningful comments
+- Refactor tests when they become brittle or hard to understand
 
 ## Running Tests
 
-**ALWAYS use the provided shell scripts to run tests.** These scripts handle environment setup, dependencies, and proper configuration.
-
-### Unit Tests (Backend)
+**Always use the provided shell scripts:**
 
 ```bash
+# Unit tests (backend)
 ./scripts/run-server-tests.sh
-```
 
-Runs all Python unit tests in `server/tests/`. The script sets up the Python virtual environment, installs dependencies, and executes tests with proper configuration.
-
-### E2E Tests (Frontend)
-
-```bash
+# E2E tests (frontend)
 ./scripts/run-e2e-tests.sh
 ```
 
-Runs all Playwright E2E tests in `client/e2e-tests/`. The script starts both Flask API and Astro dev servers automatically, installs Playwright browsers if needed, and executes tests against the running application.
+These scripts handle environment setup, dependencies, and proper configuration.
 
-## Existing Test Coverage
+## Before Creating New Tests
 
-**Before creating new tests, check existing coverage to avoid duplication.**
-
-### Unit Tests (`server/tests/`)
-
-- `test_games.py` - Game API endpoints (CRUD operations)
-- `test_models.py` - SQLAlchemy model behavior and relationships
-
-### E2E Tests (`client/e2e-tests/`)
-
-- `home.spec.ts` - Homepage display, title, headings, welcome message
-- `games.spec.ts` - Game listing, navigation, details page, back navigation
-- `accessibility.spec.ts` - ARIA attributes, focus states, semantic HTML, color contrast
-
-## When to Write Tests
-
-### Unit Tests Required For:
-- New API endpoints
-- New or modified database models
-- Utility functions with business logic
-- Bug fixes (add regression test)
-
-### E2E Tests Required For:
-- New pages or major UI features
-- Critical user flows
-- Accessibility requirements
-- Navigation changes
+1. **Check existing coverage** - avoid duplication
+2. **Review existing test patterns** - follow established conventions
+3. **Identify the right test type** - unit for logic, E2E for user flows
 
 ## Test Quality Standards
 
-### Both Unit and E2E Tests Must:
-
-1. **Be deterministic** - Same result every run, no flaky tests
-2. **Be independent** - No dependencies between tests
-3. **Be fast** - Optimize for quick feedback
-4. **Have clear names** - Describe what is being tested
-5. **Follow existing patterns** - Consistency with codebase
-
-### Unit Test Standards (Python)
-
-- Use `unittest.TestCase` as base class
-- Follow Arrange-Act-Assert pattern
-- Use in-memory SQLite database (`sqlite:///:memory:`)
-- Include type hints and docstrings
-- Name pattern: `test_<action>_<scenario>`
-
-### E2E Test Standards (Playwright)
-
-- Use role-based locators (`getByRole`, `getByLabel`, `getByText`)
-- Use `test.step()` for grouping related actions
-- Use auto-retrying assertions (`await expect()`)
-- **NEVER** use hard-coded waits (`waitForTimeout`)
-- Add `data-testid` attributes to new interactive elements
+- **Deterministic** - Same result every run, no flaky tests
+- **Independent** - No dependencies between tests
+- **Fast** - Optimize for quick feedback loops
+- **Focused** - One logical assertion per test
+- **Descriptive** - Test names should read like specifications
 
 ## Pre-Commit Checklist
 
-Before committing any code changes:
-
-1. Run `./scripts/run-server-tests.sh` - all tests must pass
-2. Run `./scripts/run-e2e-tests.sh` - all tests must pass (if UI changed)
-3. New functionality has corresponding tests
-4. No existing tests were broken or skipped without justification
-
-## Debugging Test Failures
-
-### Unit Tests
-
-```bash
-# Run specific test file
-cd server && python -m pytest tests/test_games.py -v
-
-# Run specific test method
-cd server && python -m pytest tests/test_games.py::TestGamesRoutes::test_get_all_games -v
-```
-
-### E2E Tests
-
-```bash
-# Run with UI mode for debugging
-cd client && npx playwright test --ui
-
-# Run specific test file
-cd client && npx playwright test e2e-tests/games.spec.ts
-
-# Run with headed browser
-cd client && npx playwright test --headed
-```
-
-## Testability Requirements
-
-### Backend
-- All API endpoints must return proper status codes
-- Error responses must include descriptive messages
-- Models must have `to_dict()` methods for JSON serialization
-
-### Frontend
-- All interactive elements MUST have `data-testid` attributes
-- Use semantic HTML elements for accessibility
-- Include ARIA labels where semantic HTML is insufficient
+1. Run unit tests: `./scripts/run-server-tests.sh`
+2. Run E2E tests (if UI changed): `./scripts/run-e2e-tests.sh`
+3. Verify new functionality has appropriate test coverage
+4. Confirm no tests were broken or skipped
