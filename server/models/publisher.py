@@ -1,3 +1,4 @@
+from typing import Any
 from . import db
 from .base import BaseModel
 from sqlalchemy.orm import validates, relationship
@@ -20,10 +21,10 @@ class Publisher(BaseModel):
     def validate_description(self, key, description):
         return self.validate_string_length('Description', description, min_length=10, allow_none=True)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f'<Publisher {self.name}>'
 
-    def to_dict(self):
+    def to_dict(self) -> dict[str, Any]:
         return {
             'id': self.id,
             'name': self.name,
