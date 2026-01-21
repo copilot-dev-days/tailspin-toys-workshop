@@ -6,8 +6,8 @@
   <div class="container mx-auto flex justify-between items-center pl-4 pr-4">
     <div class="flex items-center">
       <div class="relative group">
-        <button id="menu-toggle" class="focus:outline-none mr-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <button id="menu-toggle" class="focus:ring-2 focus:ring-white focus:outline-none mr-4" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
@@ -31,6 +31,8 @@
   if (menuToggle && menu) {
     menuToggle.addEventListener('click', () => {
       menu.classList.toggle('hidden');
+      const isExpanded = !menu.classList.contains('hidden');
+      menuToggle.setAttribute('aria-expanded', String(isExpanded));
     });
     
     // Close menu when clicking outside
@@ -38,6 +40,7 @@
       const isClickInside = menuToggle.contains(event.target as Node) || menu.contains(event.target as Node);
       if (!isClickInside && !menu.classList.contains('hidden')) {
         menu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
       }
     });
   }
