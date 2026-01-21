@@ -14,6 +14,9 @@ You are performing a code review of the application or the subsection as indicat
     - item
     - item
     - item
+- **Test status**
+    - item
+    - item
 - **High impact fixes**
     - item
     - item
@@ -51,6 +54,10 @@ Before reviewing, leverage MCP tools to validate code:
 - Use `astro-search_astro_docs` to verify Astro patterns
 - Check client directives usage (`client:only`, `client:load`, etc.)
 - Verify frontmatter structure and TypeScript types
+
+### Run tests
+
+Before performing the review, run both the unit and e2e tests. Add those results to the output following the pattern indicated above.
 
 ## Code Quality Checklist
 
