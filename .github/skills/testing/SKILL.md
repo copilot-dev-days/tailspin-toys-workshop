@@ -1,13 +1,11 @@
 ---
-description: 'Centralized testing guidelines for unit and E2E tests'
-applyTo: '**/tests/**,**/e2e-tests/**'
+name: testing
+description: Guidelines for running and writing unit and E2E tests. Use this when asked to run tests, write tests, debug test failures, or verify code changes.
 ---
 
-# Testing Guidelines
+# Testing Guidelines for Tailspin Toys
 
-This document provides centralized best practices for all testing in the Tailspin Toys project. For technology-specific details, see:
-- [python-tests.instructions.md](./python-tests.instructions.md) - Python unit test patterns
-- [playwright.instructions.md](./playwright.instructions.md) - Playwright E2E test patterns
+This skill provides centralized best practices for all testing in the project.
 
 ## Running Tests
 
@@ -19,10 +17,7 @@ This document provides centralized best practices for all testing in the Tailspi
 ./scripts/run-server-tests.sh
 ```
 
-Runs all Python unit tests in `server/tests/`. The script:
-- Sets up the Python virtual environment
-- Installs dependencies if needed
-- Executes tests with proper configuration
+Runs all Python unit tests in `server/tests/`. The script sets up the Python virtual environment, installs dependencies, and executes tests with proper configuration.
 
 ### E2E Tests (Frontend)
 
@@ -30,10 +25,7 @@ Runs all Python unit tests in `server/tests/`. The script:
 ./scripts/run-e2e-tests.sh
 ```
 
-Runs all Playwright E2E tests in `client/e2e-tests/`. The script:
-- Starts both Flask API and Astro dev servers automatically
-- Installs Playwright browsers if needed
-- Executes tests against the running application
+Runs all Playwright E2E tests in `client/e2e-tests/`. The script starts both Flask API and Astro dev servers automatically, installs Playwright browsers if needed, and executes tests against the running application.
 
 ## Existing Test Coverage
 
@@ -41,18 +33,14 @@ Runs all Playwright E2E tests in `client/e2e-tests/`. The script:
 
 ### Unit Tests (`server/tests/`)
 
-| File | Coverage |
-|------|----------|
-| `test_games.py` | Game API endpoints (CRUD operations) |
-| `test_models.py` | SQLAlchemy model behavior and relationships |
+- `test_games.py` - Game API endpoints (CRUD operations)
+- `test_models.py` - SQLAlchemy model behavior and relationships
 
 ### E2E Tests (`client/e2e-tests/`)
 
-| File | Coverage |
-|------|----------|
-| `home.spec.ts` | Homepage display, title, headings, welcome message |
-| `games.spec.ts` | Game listing, navigation, details page, back navigation |
-| `accessibility.spec.ts` | ARIA attributes, focus states, semantic HTML, color contrast |
+- `home.spec.ts` - Homepage display, title, headings, welcome message
+- `games.spec.ts` - Game listing, navigation, details page, back navigation
+- `accessibility.spec.ts` - ARIA attributes, focus states, semantic HTML, color contrast
 
 ## When to Write Tests
 
@@ -98,10 +86,10 @@ Runs all Playwright E2E tests in `client/e2e-tests/`. The script:
 
 Before committing any code changes:
 
-- [ ] Run `./scripts/run-server-tests.sh` - all tests pass
-- [ ] Run `./scripts/run-e2e-tests.sh` - all tests pass (if UI changed)
-- [ ] New functionality has corresponding tests
-- [ ] No existing tests were broken or skipped without justification
+1. Run `./scripts/run-server-tests.sh` - all tests must pass
+2. Run `./scripts/run-e2e-tests.sh` - all tests must pass (if UI changed)
+3. New functionality has corresponding tests
+4. No existing tests were broken or skipped without justification
 
 ## Debugging Test Failures
 
@@ -127,22 +115,6 @@ cd client && npx playwright test e2e-tests/games.spec.ts
 # Run with headed browser
 cd client && npx playwright test --headed
 ```
-
-## Adding New Tests
-
-### New Unit Test File
-
-1. Create `server/tests/test_<feature>.py`
-2. Follow the pattern in `test_games.py`
-3. Include setUp/tearDown for database isolation
-4. Run `./scripts/run-server-tests.sh` to verify
-
-### New E2E Test File
-
-1. Create `client/e2e-tests/<feature>.spec.ts`
-2. Follow the pattern in `games.spec.ts`
-3. Use `test.describe()` to group related tests
-4. Run `./scripts/run-e2e-tests.sh` to verify
 
 ## Testability Requirements
 
