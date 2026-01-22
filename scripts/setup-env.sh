@@ -12,13 +12,8 @@ fi
 cd "$PROJECT_ROOT" || exit 1
 
 # Create and activate virtual environment
-if [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
-    py -m venv venv
-    source venv/Scripts/activate || . venv/Scripts/activate
-else
-    python3 -m venv venv
-    source venv/bin/activate || . venv/bin/activate
-fi
+python3 -m venv venv
+source venv/bin/activate || . venv/bin/activate
 
 echo "Installing Python dependencies..."
 pip install -r server/requirements.txt

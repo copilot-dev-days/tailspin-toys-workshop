@@ -28,12 +28,8 @@ cd server || {
 export FLASK_DEBUG=1
 export FLASK_PORT=5100
 
-# Use appropriate Python command based on OS
-if [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
-    py app.py &
-else
-    python3 app.py &
-fi
+# Start Flask server
+python3 app.py &
 
 # Store the Python server process ID
 SERVER_PID=$!
@@ -63,28 +59,22 @@ echo "Ctl-C to stop the servers"
 cleanup() {
     echo "Shutting down servers..."
     
-    # Kill processes and their child processes
-    if [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
-        taskkill //F //T //PID $SERVER_PID 2>/dev/null
-        taskkill //F //T //PID $CLIENT_PID 2>/dev/null
-    else
-        # Send SIGTERM first to allow graceful shutdown
-        kill -TERM $SERVER_PID 2>/dev/null
-        kill -TERM $CLIENT_PID 2>/dev/null
-        
-        # Wait briefly for graceful shutdown
-        sleep 2
-        
-        # Then force kill if still running
-        if ps -p $SERVER_PID > /dev/null 2>&1; then
-            pkill -P $SERVER_PID 2>/dev/null
-            kill -9 $SERVER_PID 2>/dev/null
-        fi
-        
-        if ps -p $CLIENT_PID > /dev/null 2>&1; then
-            pkill -P $CLIENT_PID 2>/dev/null
-            kill -9 $CLIENT_PID 2>/dev/null
-        fi
+    # Send SIGTERM first to allow graceful shutdown
+    kill -TERM $SERVER_PID 2>/dev/null
+    kill -TERM $CLIENT_PID 2>/dev/null
+    
+    # Wait briefly for graceful shutdown
+    sleep 2
+    
+    # Then force kill if still running
+    if ps -p $SERVER_PID > /dev/null 2>&1; then
+        pkill -P $SERVER_PID 2>/dev/null
+        kill -9 $SERVER_PID 2>/dev/null
+    fi
+    
+    if ps -p $CLIENT_PID > /dev/null 2>&1; then
+        pkill -P $CLIENT_PID 2>/dev/null
+        kill -9 $CLIENT_PID 2>/dev/null
     fi
 
     # Deactivate virtual environment if active
