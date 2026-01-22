@@ -59,6 +59,7 @@ All Svelte components MUST use Svelte 5 runes-based reactivity patterns:
 
 ## Testing Requirements
 
+- All Svelte files must be built with testability in mind
 - Every interactive element MUST have a `data-testid` attribute
 - Use descriptive test IDs: `data-testid="game-card-{game.id}"`, `data-testid="submit-button"`
 

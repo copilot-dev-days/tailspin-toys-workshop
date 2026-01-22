@@ -16,9 +16,16 @@ This is a crowdfunding platform for games with a developer theme. The applicatio
 
 ### Required Before Each Commit
 
-- Run Python tests to ensure backend functionality
+#### Testing guidelines
+
+- Run Python tests to ensure backend functionality, and Playwright tests to ensure e2e and frontend functionality
+- Review the existing tests to ensure we're not duplicating efforts
+- Test code should be of the same quality as the rest of the project, and follow DRY principles
 - For frontend changes, run builds in the client directory to verify build success and the end-to-end tests, to ensure everything works correctly
 - When making API changes, update and run the corresponding tests to ensure everything works correctly
+
+#### Project guidelines
+
 - When updating models, ensure database migrations are included if needed
 - When adding new functionality, make sure you update the README
 - Make sure all guidance in the Copilot Instructions file is updated with any relevant changes, including to project structure and scripts, and programming guidance
@@ -79,17 +86,3 @@ This is a crowdfunding platform for games with a developer theme. The applicatio
 - `scripts/`: Development and deployment scripts
 - `data/`: Database files
 - `README.md`: Project documentation
-
-## Existing Test Coverage
-
-### Backend Tests (`server/tests/`)
-- `test_games.py` - Game API endpoint tests
-- `test_models.py` - SQLAlchemy model tests
-- `test_categories.py` - Category API tests
-- `test_publishers.py` - Publisher API tests
-
-### Frontend E2E Tests (`client/e2e-tests/`)
-- `home.spec.ts` - Homepage display and content
-- `games.spec.ts` - Game listing, navigation, and details pages
-- `filtering.spec.ts` - Game filtering functionality
-- `accessibility.spec.ts` - Accessibility compliance tests
