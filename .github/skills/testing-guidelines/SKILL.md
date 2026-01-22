@@ -1,6 +1,6 @@
 ---
 name: testing
-description: Guidelines for running and writing unit and E2E tests. Use this when asked to run tests, write tests, debug test failures, or verify code changes.
+description: Guidelines for running and writing unit and E2E tests. Use this when asked to run tests, write tests, debug test failures, or verify code changes. Also use this before performing any merge commands or pushing code.
 ---
 
 # Testing Guidelines

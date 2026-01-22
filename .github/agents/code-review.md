@@ -1,5 +1,5 @@
 ---
-name: code-review
+name: Code review
 description: Guidelines for reviewing code in this project. Use this when asked to review code, audit the codebase, check for best practices, or validate code quality.
 ---
 
