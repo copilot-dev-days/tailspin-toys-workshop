@@ -246,7 +246,6 @@ The project already includes comprehensive Playwright E2E tests:
 |--------|---------|
 | `./scripts/setup-env.sh` | Install Python and Node dependencies |
 | `./scripts/start-app.sh` | Start both backend and frontend servers |
-| `./scripts/start-app-silent.sh` | Start servers without verbose output |
 | `./scripts/run-server-tests.sh` | Run Python unit tests |
 | `./scripts/run-e2e-tests.sh` | Run Playwright E2E tests |
 
