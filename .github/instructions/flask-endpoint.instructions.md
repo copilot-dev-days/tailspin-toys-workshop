@@ -42,7 +42,7 @@ applyTo: 'server/routes/*.py'
 ## Required Testing
 
 - All endpoints need unit tests per [python-tests.instructions.md](./python-tests.instructions.md)
-- Run: [scripts/run-server-tests.sh](../../scripts/run-server-tests.sh)
+- Run: [scripts/run-server-tests.sh](../../scripts/run-server-tests.sh) (or [scripts/run-server-tests.ps1](../../scripts/run-server-tests.ps1) on Windows)
 - All tests must pass before commit
 
 ## Registration & References

@@ -34,11 +34,13 @@ description: Guidelines for running and writing unit and E2E tests. Use this whe
 **Always use the provided shell scripts:**
 
 ```bash
-# Unit tests (backend)
-./scripts/run-server-tests.sh
+# Linux/macOS/Codespaces
+./scripts/run-server-tests.sh    # Unit tests (backend)
+./scripts/run-e2e-tests.sh       # E2E tests (frontend)
 
-# E2E tests (frontend)
-./scripts/run-e2e-tests.sh
+# Windows (PowerShell)
+.\scripts\run-server-tests.ps1   # Unit tests (backend)
+.\scripts\run-e2e-tests.ps1      # E2E tests (frontend)
 ```
 
 These scripts handle environment setup, dependencies, and proper configuration.
@@ -59,7 +61,7 @@ These scripts handle environment setup, dependencies, and proper configuration.
 
 ## Pre-Commit Checklist
 
-1. Run unit tests: `./scripts/run-server-tests.sh`
-2. Run E2E tests (if UI changed): `./scripts/run-e2e-tests.sh`
+1. Run unit tests: `./scripts/run-server-tests.sh` (or `.\scripts\run-server-tests.ps1` on Windows)
+2. Run E2E tests (if UI changed): `./scripts/run-e2e-tests.sh` (or `.\scripts\run-e2e-tests.ps1` on Windows)
 3. Verify new functionality has appropriate test coverage
 4. Confirm no tests were broken or skipped

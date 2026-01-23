@@ -13,7 +13,11 @@ Or, if just want to run the app...
 A script file has been created to launch the site. You can run it by:
 
 ```bash
+# Linux/macOS/Codespaces
 ./scripts/start-app.sh
+
+# Windows (PowerShell)
+.\scripts\start-app.ps1
 ```
 
 Then navigate to the [website](http://localhost:4321) to see the site!

@@ -17,18 +17,25 @@ Tailspin Toys is a crowdfunding platform for games with a developer theme. The a
 ### Running the Application
 
 ```bash
+# Linux/macOS/Codespaces
 ./scripts/start-app.sh
+
+# Windows (PowerShell)
+.\scripts\start-app.ps1
+
 # Access at http://localhost:4321
 ```
 
 ### Running Tests
 
 ```bash
-# Backend tests
-./scripts/run-server-tests.sh
+# Linux/macOS/Codespaces
+./scripts/run-server-tests.sh    # Backend tests
+./scripts/run-e2e-tests.sh       # Frontend E2E tests
 
-# Frontend E2E tests
-./scripts/run-e2e-tests.sh
+# Windows (PowerShell)
+.\scripts\run-server-tests.ps1   # Backend tests
+.\scripts\run-e2e-tests.ps1      # Frontend E2E tests
 ```
 
 ## Repository Structure
@@ -209,8 +216,8 @@ The project already includes comprehensive Playwright E2E tests:
 4. **Add type hints** - required for all Python code
 
 ### Before Committing
-1. **Run backend tests**: `./scripts/run-server-tests.sh`
-2. **Run frontend tests** (if UI changed): `./scripts/run-e2e-tests.sh`
+1. **Run backend tests**: `./scripts/run-server-tests.sh` (or `.\scripts\run-server-tests.ps1` on Windows)
+2. **Run frontend tests** (if UI changed): `./scripts/run-e2e-tests.sh` (or `.\scripts\run-e2e-tests.ps1` on Windows)
 3. **Update tests** - if adding/modifying API endpoints or UI
 4. **Update README** - if adding new functionality
 5. **Update instructions** - if patterns change
@@ -223,7 +230,7 @@ The project already includes comprehensive Playwright E2E tests:
 2. Create/update blueprint in `server/routes/`
 3. Register blueprint in `server/app.py`
 4. Add tests in `server/tests/test_*.py`
-5. Run `./scripts/run-server-tests.sh`
+5. Run `./scripts/run-server-tests.sh` (or `.\scripts\run-server-tests.ps1` on Windows)
 
 ### Adding a New Page
 
@@ -242,14 +249,14 @@ The project already includes comprehensive Playwright E2E tests:
 
 ## Available Scripts
 
-| Script | Purpose |
-|--------|---------|
-| `./scripts/setup-env.sh` | Install Python and Node dependencies |
-| `./scripts/start-app.sh` | Start both backend and frontend servers |
-| `./scripts/run-server-tests.sh` | Run Python unit tests |
-| `./scripts/run-e2e-tests.sh` | Run Playwright E2E tests |
+| Script (Bash) | Script (PowerShell) | Purpose |
+|---------------|---------------------|---------|
+| `./scripts/setup-env.sh` | `.\scripts\setup-env.ps1` | Install Python and Node dependencies |
+| `./scripts/start-app.sh` | `.\scripts\start-app.ps1` | Start both backend and frontend servers |
+| `./scripts/run-server-tests.sh` | `.\scripts\run-server-tests.ps1` | Run Python unit tests |
+| `./scripts/run-e2e-tests.sh` | `.\scripts\run-e2e-tests.ps1` | Run Playwright E2E tests |
 
-**Always use existing scripts** rather than performing operations manually.
+**Always use existing scripts** rather than performing operations manually. Use `.sh` scripts on Linux/macOS/Codespaces and `.ps1` scripts on Windows.
 
 ## Key Principles
 
