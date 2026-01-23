@@ -1,6 +1,6 @@
 ---
 name: branching-commits-prs
-description: All changes to code must be done through branches, and grouped together logically. Whenever asked to create commit messages, to push code, or create a PR, use this skill so everything is done correctly.
+description: All changes to code must be done through branches, and grouped together logically. Whenever asked to create commit messages, to push code, or create a pull request (PR), use this skill so everything is done correctly.
 ---
 
 # Branches and commit messages

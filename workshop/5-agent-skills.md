@@ -19,6 +19,8 @@ You are a part-time developer for Tailspin Toys - a crowdfunding platform for bo
     - snippets of important code blocks.
     - details of the changes made grouped together.
 
+As the team is using Copilot to generate code and PRs, it wants to ensure the AI tools follow these requirements.
+
 In this exercise you will:
 
 - explore an existing skill for creating pull requests.
@@ -27,7 +29,7 @@ In this exercise you will:
 
 ## Agent skills
 
-Skills allow you to teach Copilot and other AI agents how to perform specific tasks. This might include how to run tests, to deploy projects, or to create a PR. Skills are included in the project in the **.github/skills** folder, or globally in **~/.copilot/skills**.
+Skills allow you to tell Copilot and other AI agents how to perform specific tasks. This might include how to run tests, deploy projects, or create a PR. Skills are included in the project in the **.github/skills** folder, or globally in **~/.copilot/skills**.
 
 Each skill is defined as a folder with a name. Each folder then contains a **SKILL.md** file, which defines the skill. The **SKILL.md** file must have YAML frontmatter with a name and description.
 
@@ -45,7 +47,7 @@ Skills can also have subfolders with scripts, assets and references to provide a
 
 ## Executing skills
 
-Skills are loaded dynamically when the agent determines they're necessary. The determination of what skills to use is driven by the description in the **SKILL.md** file. As such, it's important to have clear descriptions which define the use case for the skill.
+Skills are loaded dynamically when the agent determines they're necessary. The decision of what skills to use is driven by the description in the **SKILL.md** file. As such, it's important to have clear descriptions which define the use case for the skill.
 
 ## Exploring the PR skill
 
@@ -53,8 +55,8 @@ Because Tailspin Toys has a set of requirements for creating PRs, they created a
 
 1. Return to your codespace.
 2. Open **.github/skills/branches-commits-prs/SKILL.md**.
-3. Note the name and description. Notice how the description highlights the scenario in which it should be used, which is whenever a request is made to create a pull request or begin committing code.
-4. Read through the skill. Notice the rules are defined about how branches should be created, commits generated, and the pull request.
+3. Note the name and description. Notice how the description highlights the scenario in which it should be used, which is whenever a request is made to create a pull request or committing code.
+4. Read through the skill. Notice the rules are defined about how branches should be created, commits generated, and the contents of the pull request.
 
 ## Using the skill
 

@@ -7,6 +7,7 @@ NC='\033[0m' # No Color
 # Store initial directory and script directory
 INITIAL_DIR=$(pwd)
 SCRIPT_DIR=$(dirname "$(realpath "$0")")
+PROJECT_ROOT=$(dirname "$SCRIPT_DIR")
 
 # Check if we're in scripts, client, or server directory and navigate up one level
 current_directory=$(basename $(pwd))
@@ -18,6 +19,34 @@ echo "Starting API (Flask) server..."
 
 # Source environment setup script
 source "${SCRIPT_DIR}/setup-env.sh"
+
+# Check if database needs seeding (empty or missing)
+DB_PATH="${PROJECT_ROOT}/data/tailspin-toys.db"
+if [[ ! -f "$DB_PATH" ]] || [[ ! -s "$DB_PATH" ]]; then
+    echo "Database is empty or missing. Seeding database..."
+    cd "${PROJECT_ROOT}/server" || exit 1
+    python3 -c "from utils.seed_database import seed_database; seed_database()"
+    cd "${PROJECT_ROOT}"
+else
+    # Check if games table has data
+    GAME_COUNT=$(python3 -c "
+import sqlite3
+conn = sqlite3.connect('${DB_PATH}')
+cursor = conn.cursor()
+try:
+    cursor.execute('SELECT COUNT(*) FROM game')
+    print(cursor.fetchone()[0])
+except:
+    print(0)
+conn.close()
+" 2>/dev/null)
+    if [[ "$GAME_COUNT" == "0" ]]; then
+        echo "Database exists but is empty. Seeding database..."
+        cd "${PROJECT_ROOT}/server" || exit 1
+        python3 -c "from utils.seed_database import seed_database; seed_database()"
+        cd "${PROJECT_ROOT}"
+    fi
+fi
 
 # Continue with server startup
 cd server || {
