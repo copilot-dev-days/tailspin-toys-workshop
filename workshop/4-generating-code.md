@@ -38,10 +38,12 @@ You'll start the process of creating the new functionality by utilizing plan mod
     Retrieve the issue on the repository related to adding filtering. Help me build a good plan to implement this functionality.
     ```
 
-7. Review the plan Copilot generated. You should notice it recommends changes to the backend and frontend, as well as generating tests. You can utilize <kbd>Ctrl</kbd>+<kbd>Y</kbd> to view the full details in VS Code.
-8. If you wish to make any suggestions to the plan Copilot generated, feel free to do so!
-9. Once you're satisfied, tell Copilot to start the work by sending a `start` prompt (or another similar phrase) to Copilot, and selecting <kbd>Shift</kbd>+<kbd>Tab</kbd> to exit plan mode.
-10. Copilot will get to work generating the files!
+7. Copilot may ask follow-up questions as it builds out its plan. As those arise, answer them based on how you'd build out the functionality.
+8. Once the plan is generated, review the blueprint. You should notice it recommends changes to the backend and frontend, as well as generating tests. You can utilize <kbd>Ctrl</kbd>+<kbd>Y</kbd> to view the full details as a markdown file in VS Code.
+9.  If you wish to make any suggestions to the plan Copilot generated, feel free to do so!
+10. Once you're satisfied, switch out of plan mode by selecting <kbd>Shift</kbd>+<kbd>Tab</kbd>.
+11. Tell Copilot to start the work by sending a `start` prompt (or another similar phrase like "Let's do it!") to Copilot.
+12. Copilot will get to work generating the files!
 
 > [!NOTE]
 > This operation will likely take several minutes. You will see Copilot edit and create files, update and generate tests, and run all of the tests to ensure everything succeeds. Now's a good time to reflect on what you've explored thus far, or to enjoy a beverage.

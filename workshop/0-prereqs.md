@@ -22,9 +22,6 @@ To create a copy of the repository for the code you'll create an instance from t
 
 ## Creating a codespace
 
-> [!NOTE]
-> This workshop is built to run inside of a codespace or container. This ensures the environment you're working in has all of the necessary prerequisites installed and you'll have a smooth experience. If you wish to run the workshop locally on your system, you will need recent versions of Node.js and Python installed, as well as Visual Studio Code.
-
 Next up, you'll be using a codespace to complete the lab exercises. [GitHub Codespaces][codespaces] are a cloud-based development environment that allows you to write, run, and debug code directly in your browser. It provides a fully-featured IDE with support for multiple programming languages, extensions, and tools.
 
 1. Navigate to your newly created repository.
@@ -41,19 +38,24 @@ The creation of the codespace will take several minutes, although it's still far
 > [!IMPORTANT]
 > You'll return to the codespace in a future exercise. For the time being, leave it open in a tab in your browser.
 
+> [!NOTE]
+> This workshop is built to run inside of a codespace or container. This ensures the environment you're working in has all of the necessary prerequisites installed and you'll have a smooth experience. If you wish to run the workshop locally on your system, you will need recent versions of Node.js and Python installed, as well as Visual Studio Code.
+>
+> If you are running the workshop locally, rather than creating a codespace, clone the newly created repository. Then open the cloned repository in VS Code, which you will be using in place of Codespaces.
+
 ## Summary
 
 Congratulations, you have created a copy of the lab repository! You also began the creation process of your codespace, which you'll use when you begin writing code.
+
+## Next step
+
+Let's explore how you can provide context to Copilot using instruction files! Continue to [Exercise 1 - Custom Instructions][next-lesson].
 
 ## Resources
 
 - [GitHub Codespaces overview][codespaces]
 - [Creating a repository from a template][template-repository]
 - [Getting started with Codespaces][codespaces-quickstart]
-
-## Next step
-
-Let's explore how you can provide context to Copilot using instruction files! Continue to [Exercise 1 - Custom Instructions][next-lesson].
 
 ---
 

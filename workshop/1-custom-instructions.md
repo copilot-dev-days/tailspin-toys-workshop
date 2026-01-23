@@ -50,6 +50,8 @@ There isn't one specific way to create instructions files, just as there isn't o
 > You can even have Copilot aid in generating instructions files by selecting the gear icon for **Configure Chat** in Copilot chat and selecting **Generate Agent Instructions**.
 > 
 > ![Screenshot of option in GitHub Copilot chat with configure chat highlighted and generate agent instructions highlighted][img-generate-instructions]
+>
+> And, if you're looking for templates or a starting point for instructions files, you can explore [awesome-copilot][awesome-copilot], a repository full of instructions files, custom agents, and other resources to help you out! 
 
 ## Ensure your codespace is ready
 
@@ -71,8 +73,8 @@ Let's start by exploring the instructions files created for this project. You'll
 1. Return to your codespace.
 2. Open **.github/copilot-instructions.md**.
 3. Explore the file, noting the brief description of the project and sections for **Code standards**, **Scripts** and **GitHub Actions Workflows**. These are applicable to any interactions you'd have with Copilot, are robust, and provide clear guidance on what you're doing and how you want to accomplish it.
-4. Open **.github/instructions**, and explore the files contained inside it. Note there are instructions for Astro files, Svelte files, and the various tests and others.
-5. Open **.github/instructions/python-tests.instructions.md**. Make note of the `applyTo` section. This sets the path, relative to the root of the project, which determines which files the instructions apply to. In this case, any Python files in the **server/tests** folder starting with **test_** will match the slug.
+4. Open **.github/instructions**, and explore the files contained inside it. Note there are instructions for Astro files, Svelte files, the various tests, and others.
+5. Open **.github/instructions/python-tests.instructions.md**. Make note of the `applyTo` section. This sets the path, relative to the root of the project, which determines which files the instructions apply to. In this case, any Python files in the **server/tests** folder with a name that starts with **test_** will match the slug.
 6. Note the instructions specific to creating Python tests for this project.
 7. Finally, open **.github/instructions/flask-endpoint.instructions.md**, and scroll to the bottom of the file. Note the links to other instructions files and existing files in the project. This allows you to both breakdown larger instruction sets into smaller, reusable files, and to point to examples Copilot should consider when generating code. Note these paths are relative to the instructions file rather than the root of the project.
 
@@ -84,7 +86,7 @@ To see the impact of custom instructions, you'll start by sending a prompt with 
 > We're going to start by utilizing chat in VS Code or your codespace to streamline the process of seeing the impact of updates to instructions to the generated code. Because Copilot CLI utilizes the same instructions paradigm, the same behavior will be experienced there.
 
 1. Return to your codespace.
-2. Close all open files.
+2. Close any files open in the codespace.
 3. Open `server/routes/publishers.py`, an empty file.
 4. If **Copilot chat** is not already open, open it by selecting the Copilot icon towards the top of your codespace.
 
@@ -98,6 +100,9 @@ To see the impact of custom instructions, you'll start by sending a prompt with 
 7. Set the model to **Claude Sonnet 4.5**.
 
     ![Example of selecting the Claude Sonnet 4.5 model][img-select-model]
+
+> [!NOTE]
+> The workshop is set to use Claude Sonnet 4.5 as its the model tested when creating the workshop. This isn't an indication of preference of one model over another.
 
 8. Send the following prompt to create a new endpoint to return all publishers:
 
@@ -122,8 +127,8 @@ As highlighted previously, `copilot-instructions.md` is designed to provide proj
 
 1. Return to your codespace.
 2. Open `.github/copilot-instructions.md`.
-3. Locate the **Code formatting requirements** section, which should be near line 27. Note how it contains a note to use type hints. That's why you saw those in the code generated previously.
-4. Add the following lines of markdown right below the note about type hints to instruct Copilot to add comment headers to files and docstrings (which should be near line 27):
+3. Locate the **Code formatting requirements** section, which should be near line 35. Note how it contains a note to use type hints. That's why you saw those in the code generated previously.
+4. Add the following lines of markdown right below the note about type hints to instruct Copilot to add comment headers to files and docstrings (which should be near line 35):
 
    ```markdown
    - Every function should have docstrings or the language equivalent.
@@ -161,7 +166,7 @@ As highlighted previously, `copilot-instructions.md` is designed to provide proj
 
 11. Notice the generated code now includes a docstring as well as a comment block at the top!
 12. Also note how the existing code isn't updated, but of course you could ask Copilot to perform that operation if you so desired!
-13. **Don't implement the suggested changes**, as you'll be doing that in the next exercise.
+13. **Don't implement the suggested changes**, as you'll be doing that in a later exercise.
 
 > [!NOTE]
 > If you accepted the changes, you can always select the **Undo** button towards the top right of the Copilot chat window.

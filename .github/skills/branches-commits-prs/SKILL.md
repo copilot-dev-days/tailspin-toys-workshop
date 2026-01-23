@@ -1,6 +1,6 @@
 ---
 name: branching-commits-prs
-description: All changes to code must be done through branches, and grouped together logically. Whenever asked to create commit messages, to push code, or create a pull request (PR), use this skill so everything is done correctly.
+description: All changes to the repository must be done through a pull request (PR). A branch must always be created, and commits grouped together logically. Whenever asked to create commit messages, to push code, or create a pull request (PR), use this skill so everything is done correctly.
 ---
 
 # Branches and commit messages
@@ -35,4 +35,3 @@ When creating a pull request:
   - Include a quick list of changes as a bulleted list
   - Provide additional details grouped together logically, following good accessibility practices for headers
   - Include code snippets for important changes
-  - Use the Playwright MCP server to create a screenshot of any UI updates, and include them in the PR

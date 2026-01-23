@@ -74,15 +74,15 @@ You can start a custom agent in Copilot CLI by using the `/agent` command. Let's
 > [!NOTE]
 > Prefixing a prompt with a `!` allows you to execute CLI tools from directly inside Copilot CLI.
 
-5. Bring up the list of agents by using the `/agent` prompt in Copilot CLI.
-6. Select the **Accessibility agent** from the list of available agents.
-7. Use the following prompt to ask the accessibility agent to perform a review and generate fixes for the biggest issues it discovers:
+1. Bring up the list of agents by typing `/agent` in the prompt window in Copilot CLI and selecting <kbd>Enter</kbd>.
+2. Select the **Accessibility agent** from the list of available agents.
+3. Use the following prompt to ask the accessibility agent to perform a review and generate fixes for one particular class of possible errors related to HTML headers:
 
     ```
-    Perform an accessibility review of the site. Pull the related issue down from the repository for details. Generate fixes for the biggest issues you discover. Ensure there are e2e tests for any updates made to the project. Then create a PR with the updates.
+    Perform an accessibility review of the site. Pull the related issue down from the repository for details. We're going to build in stages, so for now focus on headers, ensuring we're following good guidelines. Ensure there are e2e tests for any updates made to the project. Then create a PR with the updates.
     ```
 
-8. Copilot gets to work on the task! It will start by retrieving the issue, then performing the review, generating updates, and finally creating the PR. You should also notice when it creates the PR it utilizes the skill focused on PRs for the project.
+4. Copilot gets to work on the task! It will start by retrieving the issue, then performing the review, generating updates, and finally creating the PR. You should also notice when it creates the PR it utilizes the skill focused on PRs for the project.
 
 > [!NOTE]
 > This process will likely take a few minutes. It's a good time to reflect on everything you've learned, enjoy a beverage, or sneak ahead to the next module which talks about some additional commands available to you in Copilot CLI.

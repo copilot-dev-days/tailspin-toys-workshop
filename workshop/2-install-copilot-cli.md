@@ -47,7 +47,7 @@ GitHub Codespaces come with Node.js pre-installed, so you can use npm to install
    copilot --version
    ```
 
-   You should see the version number displayed (e.g., `v0.0.390`).
+   You should see the version number displayed (e.g., `v0.0.393`).
 
 > [!TIP]
 > If you encounter permission errors, you may need to use `sudo npm install -g @github/copilot` on some systems. However, this shouldn't be necessary in GitHub Codespaces.

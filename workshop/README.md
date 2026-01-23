@@ -6,8 +6,6 @@ Welcome to this 90-minute instructor-led workshop on **GitHub Copilot CLI**! In 
 
 GitHub Copilot CLI is a powerful agentic coding assistant that runs directly in your terminal. Unlike traditional IDE-based Copilot experiences, Copilot CLI enables you to work with AI where many developers spend much of their time - the command line. It can explore codebases, make code changes, run commands, and interact with external tools through Model Context Protocol (MCP) servers.
 
-### Duration: 90 minutes
-
 ### Learning Objectives
 
 By the end of this workshop, you will be able to:
@@ -27,7 +25,10 @@ Before attending this workshop, please ensure you have:
 - [ ] Basic familiarity with terminal/command line operations
 - [ ] Git installed and configured
 
-## The Application: Tailspin Toys
+> [!NOTE]
+> If you are using Copilot Business or Copilot Enterprise, ensure your admin has enabled Copilot CLI for use.
+
+## The Scenario: Tailspin Toys
 
 Throughout this workshop, you'll be working with **Tailspin Toys**, a crowdfunding platform for games with a developer theme. The application features:
 
@@ -54,18 +55,6 @@ This full-stack application provides an excellent playground for exploring Copil
 ## Getting Started
 
 **[Start the workshop with Exercise 0: Prerequisites →][ex0]**
-
-## Key Copilot CLI Commands
-
-| Command | Description |
-|---------|-------------|
-| `copilot` | Start an interactive Copilot CLI session |
-| `/help` | Display available commands |
-| `/clear` | Clear the conversation history |
-| `/mcp add` | Add an MCP server |
-| `/mcp show` | Show configured MCP servers |
-| `/agent` | Select a custom agent |
-| `/compact` | Toggle compact output mode |
 
 ## Tips for Success
 

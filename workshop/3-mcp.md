@@ -29,6 +29,7 @@ A couple of popular existing MCP servers are:
 
 - **[GitHub MCP Server][github-mcp-server]**: This server provides access to a set of APIs for managing your GitHub repositories. It allows the AI agent to perform actions such as creating new repositories, updating existing ones, and managing issues and pull requests. **The GitHub MCP server is automatically available in Copilot CLI.**
 - **[Playwright MCP Server][playwright-mcp-server]**: This server provides browser automation capabilities using Playwright. It allows the AI agent to perform actions such as navigating to web pages, filling out forms, and clicking buttons.
+- **[Microsoft Learn MCP Server](https://learn.microsoft.com/en-us/training/support/mcp)**: This server enables clients like GitHub Copilot and other AI agents to bring trusted and up-to-date information directly from Microsoft's official documentation. It allows to search through documentation, fetch a complete article, and search through code samples.
 
 There are many other MCP servers available that provide access to different tools and resources. GitHub hosts an [MCP registry][mcp-registry] to enhance discoverability and contributions to the ecosystem. 
 
@@ -114,9 +115,9 @@ Now that you have set up the GitHub MCP server, you can use Copilot Agent mode t
 8. In a separate browser tab, navigate to your GitHub repository and select the issues tab.
 9.  You should see a list of issues that have been created by Copilot. Each issue should include a clear title and a checkbox list of acceptance criteria.
 
-You should notice that the issues are fairly detailed. This is where you benefit from the power of Large Language Models (LLMs) and Model Context Protocol (MCP), as it has been able to create a clear initial issue description.
-
 ![Example of issues created in GitHub][img-github-issues]
+
+You should notice that the issues are fairly detailed. This is where you benefit from the power of Large Language Models (LLMs) and Model Context Protocol (MCP), as it has been able to create a clear initial issue description.
 
 ## Summary and next steps
 

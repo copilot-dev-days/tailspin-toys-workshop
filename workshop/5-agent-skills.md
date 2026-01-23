@@ -36,7 +36,7 @@ Each skill is defined as a folder with a name. Each folder then contains a **SKI
 ```yaml
 ---
 name: branching-commits-prs
-description: All changes to code must be done through branches, and grouped together logically. Whenever asked to create commit messages, to push code, or create a PR, use this skill so everything is done correctly.
+description: All changes to the repository must be done through a pull request (PR). A branch must always be created, and commits grouped together logically. Whenever asked to create commit messages, to push code, or create a pull request (PR), use this skill so everything is done correctly.
 ---
 ```
 
@@ -73,7 +73,7 @@ As highlighted previously, skills are automatically invoked by Copilot CLI. As a
 4. Ask Copilot to create a PR by using the following prompt:
 
     ```
-    Can you please create a PR for me!
+    Can you please create a pull request for me!
     ```
 
 5. Copilot will acknowledge the request. After a few moments, you'll notice Copilot will indicate it's utilizing the **branches-commits-prs** skill.
