@@ -29,7 +29,7 @@ A couple of popular existing MCP servers are:
 
 - **[GitHub MCP Server][github-mcp-server]**: This server provides access to a set of APIs for managing your GitHub repositories. It allows the AI agent to perform actions such as creating new repositories, updating existing ones, and managing issues and pull requests. **The GitHub MCP server is automatically available in Copilot CLI.**
 - **[Playwright MCP Server][playwright-mcp-server]**: This server provides browser automation capabilities using Playwright. It allows the AI agent to perform actions such as navigating to web pages, filling out forms, and clicking buttons.
-- **[Microsoft Learn MCP Server](https://learn.microsoft.com/en-us/training/support/mcp)**: This server enables clients like GitHub Copilot and other AI agents to bring trusted and up-to-date information directly from Microsoft's official documentation. It allows to search through documentation, fetch a complete article, and search through code samples.
+- **[Microsoft Learn MCP Server][microsoft-learn-mcp-server]**: This server enables clients like GitHub Copilot and other AI agents to bring trusted and up-to-date information directly from Microsoft's official documentation. It allows to search through documentation, fetch a complete article, and search through code samples.
 
 There are many other MCP servers available that provide access to different tools and resources. GitHub hosts an [MCP registry][mcp-registry] to enhance discoverability and contributions to the ecosystem. 
 
@@ -156,5 +156,6 @@ You can now continue to the next exercise, where you will learn how to [provide 
 [remote-github-mcp-server]: https://github.blog/changelog/2025-06-12-remote-github-mcp-server-is-now-available-in-public-preview/
 [yolo-wikipedia]: https://wikipedia.org/wiki/YOLO_(aphorism)
 [security-considerations]: https://docs.github.com/copilot/concepts/agents/about-copilot-cli#security-considerations
+[microsoft-learn-mcp-server]: https://learn.microsoft.com/training/support/mcp
 [img-mcp-diagram]: ./images/3-mcp-diagram.png
 [img-github-issues]: ./images/3-github-issues-created.png
