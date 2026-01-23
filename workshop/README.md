@@ -48,6 +48,8 @@ This full-stack application provides an excellent playground for exploring Copil
 | [4. Generating Code][ex4] | Code Generation | Use plan mode and generate features |
 | [5. Agent Skills][ex5] | Skills | Enhance Copilot with specialized skills |
 | [6. Custom Agents][ex6] | Agents | Create and use custom agents |
+| [7. Slash Commands][ex7] | CLI Features | Explore context, models, and sharing |
+| [8. Review][ex8] | Summary | Review key concepts and next steps |
 
 ## Getting Started
 
@@ -73,10 +75,6 @@ This full-stack application provides an excellent playground for exploring Copil
 4. **Trust but verify** - Always review generated code before committing
 5. **Use instruction files** - Leverage `.github/copilot-instructions.md` for project-wide guidance
 
-## Workshop Resources
-
-For additional resources, documentation, and reference materials, see [resources.md][resources].
-
 ## Support
 
 - **During the workshop**: Raise your hand or use the chat to ask questions
@@ -86,7 +84,6 @@ For additional resources, documentation, and reference materials, see [resources
 
 *Happy coding with GitHub Copilot CLI! 🚀*
 
-[resources]: ./resources.md
 [ex0]: ./0-prereqs.md
 [ex1]: ./1-custom-instructions.md
 [ex2]: ./2-install-copilot-cli.md
@@ -94,3 +91,5 @@ For additional resources, documentation, and reference materials, see [resources
 [ex4]: ./4-generating-code.md
 [ex5]: ./5-agent-skills.md
 [ex6]: ./6-custom-agents.md
+[ex7]: ./7-slash-commands.md
+[ex8]: ./8-review.md

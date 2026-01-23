@@ -1,6 +1,6 @@
 # Exercise 6 - Custom agents
 
-| [← Previous lesson: Agent Skills][previous-lesson] | |
+| [← Previous lesson: Agent Skills][previous-lesson] | [Next lesson: Slash Commands →][next-lesson] |
 |:--|--:|
 
 [Custom agents][custom-agents] in GitHub Copilot allow you to create specialized AI assistants tailored to specific tasks or domains within your development workflow. By defining agents through markdown files in the `.github/agents` folder of your repository, you can provide Copilot with focused instructions, best practices, coding patterns, and domain-specific knowledge that guide it to perform particular types of work more effectively. This allows teams to codify their expertise and standards into reusable agents. You might create an accessibility agent that ensures [WCAG][wcag] compliance, a security agent that follows secure coding practices, or a testing agent that maintains consistent test patterns—enabling developers to leverage these specialized capabilities on-demand for faster, more consistent implementations.
@@ -79,13 +79,16 @@ You can start a custom agent in Copilot CLI by using the `/agent` command. Let's
 7. Use the following prompt to ask the accessibility agent to perform a review and generate fixes for the biggest issues it discovers:
 
     ```
-    Perform an accessibility review of the site. Generate fixes for the biggest issues you discover. Ensure there are e2e tests for any updates made to the project. Then create a PR with the updates.
+    Perform an accessibility review of the site. Pull the related issue down from the repository for details. Generate fixes for the biggest issues you discover. Ensure there are e2e tests for any updates made to the project. Then create a PR with the updates.
     ```
 
-8. Copilot gets to work on the task! It will start by performing the review, generating updates, then creating the PR. You should notice when it creates the PR it utilizes the skill focused on PRs for the project.
+8. Copilot gets to work on the task! It will start by retrieving the issue, then performing the review, generating updates, and finally creating the PR. You should also notice when it creates the PR it utilizes the skill focused on PRs for the project.
 
 > [!NOTE]
 > This process will likely take a few minutes. It's a good time to reflect on everything you've learned, enjoy a beverage, or sneak ahead to the next module which talks about some additional commands available to you in Copilot CLI.
+
+> [!IMPORTANT]
+> **DO NOT** exit from Copilot CLI. We will need it in the next exercise.
 
 ## Summary and next steps
 
@@ -96,19 +99,26 @@ You explored these concepts:
 - how to create a custom agent.
 - assigning a task to a custom agent.
 
+Next up, let's explore [some slash commands][next-lesson] to learn some additional tricks with Copilot CLI.
+
 ## Resources
 
 - [Custom agents][custom-agents]
+- [Creating custom agents for a repository][creating-custom-agents]
+- [Custom agents on awesome-copilot][awesome-copilot-agents]
 - [Preparing to use custom agents in your organization][org-custom-agents]
 - [Preparing to use custom agents in your enterprise][enterprise-custom-agents]
 
 ---
 
-| [← Previous lesson: Agent Skills][previous-lesson] | |
+| [← Previous lesson: Agent Skills][previous-lesson] | [Next lesson: Slash Commands →][next-lesson] |
 |:--|--:|
 
 [previous-lesson]: ./5-agent-skills.md
+[next-lesson]: ./7-slash-commands.md
 [custom-agents]: https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli#use-custom-agents
+[creating-custom-agents]: https://docs.github.com/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents
+[awesome-copilot-agents]: https://github.com/github/awesome-copilot/tree/main/agents
 [wcag]: https://www.w3.org/WAI/standards-guidelines/wcag/
 [org-custom-agents]: https://docs.github.com/copilot/how-tos/administer-copilot/manage-for-organization/prepare-for-custom-agents
 [enterprise-custom-agents]: https://docs.github.com/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-agents/prepare-for-custom-agents

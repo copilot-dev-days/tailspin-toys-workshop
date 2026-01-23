@@ -102,8 +102,8 @@ Now that you have set up the GitHub MCP server, you can use Copilot Agent mode t
     From our recent planning meeting, the upcoming backlog includes the following tasks:
 
     1. Allow users to filter games by category and publisher
-    2. Implement pagination on the game list page
-    3. Perform a review of the project to ensure coding standards are being followed
+    2. Perform an accessibility review and ensure the site is following good practices
+    3. Implement pagination on the game list page
     ```
 
 > [!TIP]

@@ -77,7 +77,10 @@ As highlighted previously, skills are automatically invoked by Copilot CLI. As a
     ```
 
 5. Copilot will acknowledge the request. After a few moments, you'll notice Copilot will indicate it's utilizing the **branches-commits-prs** skill.
-6. Copilot will then follow the instructions in the skill, creating a branch, commits, and eventually the PR.
+
+    ![Screenshot of the agent skill being called by Copilot CLI](./images/5-agent-skill.png)
+
+6. Copilot will then follow the instructions in the skill. It start by running the tests. Then it will create a branch, commits, and eventually the PR.
 7. Once the PR is created, return to your repository and open the PR. Note the sections follow the guidelines set forth in the skill, matching the requirements the team put forth.
 
 ## Summary and next steps
@@ -90,11 +93,12 @@ With the help of an agent skill, you created a new PR which matches documented r
 
 Skills are perfect for tasks, but for more robust operations we want to take advantage of [custom agents][next-lesson], which we'll explore next!
 
-## References
+## Resources
 
 - [About Agent Skills][about-agent-skills]
 - [Agent Skills Specification][agent-skills-spec]
 - [Agent Skills Repository][agent-skills-repo]
+- [Agent Skills on awesome-copilot][awesome-copilot-skills]
 
 ---
 
@@ -106,3 +110,4 @@ Skills are perfect for tasks, but for more robust operations we want to take adv
 [agent-skills-repo]: https://github.com/agentskills/agentskills
 [agent-skills-spec]: https://agentskills.io/specification
 [about-agent-skills]: https://docs.github.com/copilot/concepts/agents/about-agent-skills
+[awesome-copilot-skills]: https://github.com/github/awesome-copilot/tree/main/skills
