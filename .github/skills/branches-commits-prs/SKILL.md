@@ -25,6 +25,8 @@ When committing changes:
 
 ## Pull request
 
+Before creating a pull request, ensure all tests pass.
+
 When creating a pull request:
 
 - Provide a clear title describing the changes which have been made
