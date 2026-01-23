@@ -64,11 +64,11 @@ This is a crowdfunding platform for games with a developer theme. The applicatio
 
 - Several scripts exist in the `scripts` folder
 - Always use available scripts to perform tasks rather than performing operations manually
-- Existing scripts:
-    - `scripts/setup-env.sh`: Performs installation of all Python and Node dependencies
-    - `scripts/run-server-tests.sh`: Calls setup-env, then runs all Python tests
-    - `scripts/run-e2e-tests.sh`: Runs Playwright E2E tests for frontend
-    - `scripts/start-app.sh`: Calls setup-env, then starts both backend and frontend servers
+- Existing scripts (use `.sh` on Linux/macOS/Codespaces, `.ps1` on Windows):
+    - `scripts/setup-env`: Performs installation of all Python and Node dependencies
+    - `scripts/run-server-tests`: Calls setup-env, then runs all Python tests
+    - `scripts/run-e2e-tests`: Runs Playwright E2E tests for frontend
+    - `scripts/start-app`: Calls setup-env, then starts both backend and frontend servers
 
 ## Repository Structure
 

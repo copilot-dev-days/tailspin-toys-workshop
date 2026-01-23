@@ -126,7 +126,7 @@ Before performing the review, run both the unit and e2e tests. Add those results
 2. **Check patterns** - Does it follow project conventions?
 3. **Validate with tools** - Use MCP tools to catch issues
 4. **Test coverage** - Are there tests? Should there be?
-5. **Run tests** - Use `./scripts/run-server-tests.sh` and `./scripts/run-e2e-tests.sh`
+5. **Run tests** - Use `./scripts/run-server-tests.sh` and `./scripts/run-e2e-tests.sh` (or `.ps1` equivalents on Windows)
 
 ## Project-Specific Patterns
 

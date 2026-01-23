@@ -11,6 +11,7 @@
         "devcontainers",
         "docstrings",
         "dotnettools",
+        "frontmatter",
         "isouter",
         "prebuild",
         "pylance",

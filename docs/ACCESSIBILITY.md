@@ -145,7 +145,11 @@ We use @axe-core/playwright for automated accessibility testing. Tests run on ev
 Run accessibility tests locally:
 
 ```bash
+# Linux/macOS/Codespaces
 ./scripts/run-e2e-tests.sh
+
+# Windows (PowerShell)
+.\scripts\run-e2e-tests.ps1
 ```
 
 Or run only accessibility tests:
