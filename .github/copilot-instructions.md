@@ -10,7 +10,7 @@ This is a crowdfunding platform for games with a developer theme. The applicatio
 - Always use instructions files when available, reviewing before generating code
 - Do not generate summary markdown files upon completion of a task
 - Always use absolute paths when running scripts and BASH commands
-- **NEVER commit or push to main automatically unless explicitly instructed to do so**
+- **Do NOT commit or push changes unless explicitly instructed to do so by the user**
 
 ## Code standards
 
