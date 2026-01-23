@@ -16,10 +16,19 @@
 	"forwardPorts": [
 		4321,
 		5100
-	]
-	// Configure tool-specific properties.
-	// "customizations": {},
-
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"github.copilot",
+				"github.copilot-chat",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"svelte.svelte-vscode",
+				"astro-build.astro-vscode"
+			]
+		}
+	}
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 }
