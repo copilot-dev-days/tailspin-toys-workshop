@@ -39,8 +39,8 @@ You'll start the process of creating the new functionality by utilizing plan mod
     ```
 
 7. Review the plan Copilot generated. You should notice it recommends changes to the backend and frontend, as well as generating tests. You can utilize <kbd>Ctrl</kbd>+<kbd>Y</kbd> to view the full details in VS Code.
-8. If you wish to make any suggestions, feel free to do so!
-9. Once you're satisfied, tell Copilot to start the work by sending a `start` command to Copilot and selecting <kbd>Shift</kbd>+<kbd>Tab</kbd> to exit plan mode.
+8. If you wish to make any suggestions to the plan Copilot generated, feel free to do so!
+9. Once you're satisfied, tell Copilot to start the work by sending a `start` prompt (or another similar phrase) to Copilot, and selecting <kbd>Shift</kbd>+<kbd>Tab</kbd> to exit plan mode.
 10. Copilot will get to work generating the files!
 
 > [!NOTE]
@@ -50,7 +50,7 @@ You'll start the process of creating the new functionality by utilizing plan mod
 
 All AI code needs to be reviewed before being merged into production. Let's take the time now to explore the files Copilot created and modified in implementing the new feature.
 
-1. Minimize the terminal window in your codespace by selecting <kbd>Ctrl</kbd>+<kbd>\`</kbd>.
+1. Hide the terminal window in your codespace by selecting <kbd>Ctrl</kbd>+<kbd>\`</kbd>.
 2. Select **Source Control** in your codespace.
 3. Note the files changed. You should see updates to files such as **games.py**, the Games API, and **test_games.py**, the tests for that API. You should also see new files created, such as Svelte components for the new filter functionality, and Playwright tests to validate the frontend.
 4. Open the files and explore the changes. In particular, notice the comment sections which have been added. All of this comes from the instructions files you worked on previously in this workshop.

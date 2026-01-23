@@ -13,6 +13,41 @@ Write-Host "Starting API (Flask) server..."
 # Source environment setup script
 & "$ScriptDir\setup-env.ps1"
 
+# Check if database needs seeding (empty or missing)
+$DbPath = "$ProjectRoot\data\tailspin-toys.db"
+$NeedsSeed = $false
+
+if (-not (Test-Path $DbPath)) {
+    $NeedsSeed = $true
+    Write-Host "Database is missing. Seeding database..."
+} elseif ((Get-Item $DbPath).Length -eq 0) {
+    $NeedsSeed = $true
+    Write-Host "Database is empty. Seeding database..."
+} else {
+    # Check if games table has data
+    $GameCount = python -c @"
+import sqlite3
+conn = sqlite3.connect('$($DbPath -replace '\\', '/')') 
+cursor = conn.cursor()
+try:
+    cursor.execute('SELECT COUNT(*) FROM game')
+    print(cursor.fetchone()[0])
+except:
+    print(0)
+conn.close()
+"@ 2>$null
+    if ($GameCount -eq "0") {
+        $NeedsSeed = $true
+        Write-Host "Database exists but is empty. Seeding database..."
+    }
+}
+
+if ($NeedsSeed) {
+    Set-Location "$ProjectRoot\server"
+    python -c "from utils.seed_database import seed_database; seed_database()"
+    Set-Location $ProjectRoot
+}
+
 # Start Flask server
 Set-Location server
 $env:FLASK_DEBUG = "1"

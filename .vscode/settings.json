@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "agentic",
         "backref",
         "CODEOWNERS",
         "codespace",
@@ -17,6 +18,7 @@
         "pylance",
         "schlich",
         "SDLC",
+        "subfolders",
         "WCAG"
     ],
     "github.copilot.nextEditSuggestions.enabled": true,
