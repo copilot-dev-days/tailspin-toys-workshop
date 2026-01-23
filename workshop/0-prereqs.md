@@ -14,13 +14,16 @@ To create a copy of the repository for the code you'll create an instance from t
 
     ![Use this template button](./images/0-use-template.png)
 
-3. If you are completing the workshop as part of an event being led by GitHub or Microsoft, follow the instructions provided by the mentors. Otherwise, you can create the new repository in an organization where you have access to Copilot coding agent and can assign issues to Copilot.
+3. If you are completing the workshop as part of an event being led by GitHub or Microsoft, follow the instructions provided by the mentors. Otherwise, you can create the new repository in an organization where you have access to Copilot.
 
     ![Input the repository template settings](./images/0-repository-settings.png)
 
 4. Make a note of the repository path you created (**organization-or-user-name/repository-name**), as you will be referring to this later in the lab.
 
 ## Creating a codespace
+
+> [!NOTE]
+> This workshop is built to run inside of a codespace or container. This ensures the environment you're working in has all of the necessary prerequisites installed and you'll have a smooth experience. If you wish to run the workshop locally on your system, you will need recent versions of Node.js and Python installed, as well as Visual Studio Code.
 
 Next up, you'll be using a codespace to complete the lab exercises. [GitHub Codespaces][codespaces] are a cloud-based development environment that allows you to write, run, and debug code directly in your browser. It provides a fully-featured IDE with support for multiple programming languages, extensions, and tools.
 

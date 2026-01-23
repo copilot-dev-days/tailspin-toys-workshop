@@ -7,7 +7,7 @@ As you might expect, the core tasks you'll perform with GitHub Copilot CLI is to
 
 ## Scenario
 
-The time has come to finally implement filtering in the project. You've already got the issue in GitHub. Let's have Copilot pull it down and put together a plan to implement it. Then we'll get Copilot on the job to create the code and run the tests.
+The time has come to finally implement filtering in the project. You've already got the issue in GitHub. Let's have Copilot retrieve the details from the issue and put together a plan to implement it. Then we'll get Copilot on the job to create the code and run the tests.
 
 In this exercise, you will:
 
@@ -18,7 +18,7 @@ By the end of this exercise, you will have added new functionality to the projec
 
 ## Utilize plan mode
 
-One of the best uses of AI is planning. Oftentimes you'll have a good concept of what you want to build, but just need to bounce some ideas off of something. AI tools can help you crystalize your thoughts, asking you follow up questions, and working through different pitfalls or missing components. To support this process, Copilot CLI supports a plan mode.
+One of the best uses of AI is planning. Oftentimes you'll have a good concept of what you want to build, but just need to bounce some ideas off of something. AI tools can help you crystalize your thoughts by asking you follow up questions and working through different pitfalls or missing components. To support this process, Copilot CLI offers a plan mode.
 
 You'll start the process of creating the new functionality by utilizing plan mode in Copilot CLI.
 
@@ -36,6 +36,7 @@ You'll start the process of creating the new functionality by utilizing plan mod
 
     ```
     Retrieve the issue on the repository related to adding filtering. Help me build a good plan to implement this functionality.
+    ```
 
 7. Review the plan Copilot generated. You should notice it recommends changes to the backend and frontend, as well as generating tests. You can utilize <kbd>Ctrl</kbd>+<kbd>Y</kbd> to view the full details in VS Code.
 8. If you wish to make any suggestions, feel free to do so!

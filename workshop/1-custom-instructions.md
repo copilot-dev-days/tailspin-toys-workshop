@@ -51,7 +51,6 @@ There isn't one specific way to create instructions files, just as there isn't o
 > 
 > ![Screenshot of option in GitHub Copilot chat with configure chat highlighted and generate agent instructions highlighted][img-generate-instructions]
 
-
 ## Ensure your codespace is ready
 
 In a [prior exercise][prereqs-lesson] you launched the codespace you'll use for the remainder of the coding exercises in this lab. Let's put the final touches on it before you begin using it.
@@ -82,12 +81,15 @@ Let's start by exploring the instructions files created for this project. You'll
 To see the impact of custom instructions, you'll start by sending a prompt with the current version of the files, and see how Copilot pulls those files into context. Then you'll then make some updates, send the same prompt again, and note the difference.
 
 > [!NOTE]
-> We're going to start by utilizing chat in VS Code to streamline the process of seeing the impact of updates to instructions to the generated code. Because Copilot CLI utilizes the same instructions paradigm, the same behavior will be experienced there.
+> We're going to start by utilizing chat in VS Code or your codespace to streamline the process of seeing the impact of updates to instructions to the generated code. Because Copilot CLI utilizes the same instructions paradigm, the same behavior will be experienced there.
 
 1. Return to your codespace.
 2. Close all open files.
 3. Open `server/routes/publishers.py`, an empty file.
 4. If **Copilot chat** is not already open, open it by selecting the Copilot icon towards the top of your codespace.
+
+   ![Chat icon in VS Code](./images/1-chat-icon.png)
+
 5. Create a new chat session by typing `/clear` into the chat window and selecting <kbd>Enter</kbd> (or <kbd>return</kbd> on a Mac).
 6. Select **Ask** from the modes dropdown.
 
@@ -103,7 +105,7 @@ To see the impact of custom instructions, you'll start by sending a prompt with 
    Create a new endpoint to return a list of all publishers. It should return the name and id for all publishers.
    ```
 
-9. Copilot explores the project to learn how best to implement the code, and generates a list of suggestions, which may include code for `publishers.py`, `app.py`, and tests to ensure the new code runs correctly.
+9.  Copilot explores the project to learn how best to implement the code, and generates a list of suggestions, which may include code for `publishers.py`, `app.py`, and tests to ensure the new code runs correctly.
 10. Note the list references section in the chat window. Expand the list, and take note of the files used for context. They should include **copilot-instructions.md**, as well as **.instructions** files for creating Flask endpoints and Python tests. The former is because **copilot-instructions.md** is included in every request, while the latter is loaded whenever a file matches the slug in the `applyTo` header matter of **.instructions** files.
 
    ![Screenshot of the references section in Copilot Chat in VS Code][img-references]
@@ -159,7 +161,7 @@ As highlighted previously, `copilot-instructions.md` is designed to provide proj
 
 11. Notice the generated code now includes a docstring as well as a comment block at the top!
 12. Also note how the existing code isn't updated, but of course you could ask Copilot to perform that operation if you so desired!
-13. **Don't implement the suggested changes**, as you'll be doing that in the next section.
+13. **Don't implement the suggested changes**, as you'll be doing that in the next exercise.
 
 > [!NOTE]
 > If you accepted the changes, you can always select the **Undo** button towards the top right of the Copilot chat window.
@@ -168,7 +170,12 @@ From this section, you explored how the custom instructions file has provided Co
 
 ## Explore the impact of a .instructions file
 
-Our focus in the last two sets of steps was on **copilot-instructions.md**, the global instructions file used for all chat requests for Copilot Chat, Copilot Coding Agent (CCA), and Copilot CLI. Now let's explore the impact of a **.instructions** file. There's a chance you already saw this, depending on the code Copilot generated. We're going to take a moment, be a bit more specific with the prompt, and see the tests Copilot generates based on the instructions.
+Our focus in the last two sets of steps was on **copilot-instructions.md**, the global instructions file used for all chat requests for Copilot Chat, Copilot Coding Agent (CCA), and Copilot CLI. Now let's explore the impact of a **.instructions** file.
+
+**.instructions** files can contain an `applyTo` setting in its frontmatter, which allows you to specify a slug or path. Copilot will utilize these instructions whenever it works on a file which matches the slug. In our case, we have an instructions file for Python tests defined at **.github/instructions/python-tests.instructions.md**, which will be used by Copilot for any files which match the pattern **server/tests/test\_*.py**.
+
+> [!NOTE]
+> There's a chance Copilot already generated test code in the prior exercise, so you might be looking at the same code again. To ensure we can see the behavior, we're going to take a moment, be a bit more specific with the prompt, and see the tests Copilot generates based on the instructions.
 
 1. Return to your codespace.
 2. Open Copilot Chat if not already open.

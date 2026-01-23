@@ -3,25 +3,17 @@
 | [← Previous lesson: Custom Instructions][previous-lesson] | [Next lesson: MCP Servers →][next-lesson] |
 |:--|--:|
 
-In this exercise, you'll install GitHub Copilot CLI directly in your codespace. Copilot CLI is a powerful agentic coding assistant that runs in your terminal, enabling you to explore codebases, generate code, run commands, and interact with external tools - all from the command line.
+[GitHub Copilot CLI][about-copilot-cli] is a powerful agentic coding assistant that runs in your terminal, enabling you to explore codebases, generate code, run commands, and interact with external tools - all from the command line.
+
+## Scenario
+
+Tailspin Toys is a nascent organization with a website that's lacking in many features. Their backlog is continuing to grow, and there's a strong demand to grow. To aid the developers, they want to begin utilizing AI agents through Copilot CLI. This will allow developers to be more productive, as they can focus on the bigger picture while moving faster. The first step to doing this is, of course, to install Copilot CLI!
 
 In this exercise, you will learn how to:
 
-- Open a terminal in VS Code / GitHub Codespaces
-- Install GitHub Copilot CLI using npm
-- Authenticate with your GitHub account
-- Verify the installation
-
-## Prerequisites
-
-Before proceeding, ensure you have:
-
-- A GitHub account with an active **Copilot Pro, Pro+, Business, or Enterprise** subscription
-- Your codespace from Exercise 0 running
-- Node.js 22 or later (pre-installed in your codespace)
-
-> [!NOTE]
-> If you have access to GitHub Copilot via your organization or enterprise, you cannot use Copilot CLI if your organization owner or enterprise administrator has disabled it in the organization or enterprise settings.
+- install GitHub Copilot CLI using npm.
+- authenticate with your GitHub account.
+- verify the installation.
 
 ## Open a terminal in your codespace
 
@@ -71,12 +63,10 @@ On first launch, Copilot CLI will prompt you to authenticate with your GitHub ac
    ```
 
 2. If you're not currently logged in, you'll see a prompt to authenticate. Copilot CLI will display a device code and ask you to visit a URL.
-
 3. Follow the on-screen instructions:
    - Open the provided URL in your browser
    - Enter the device code when prompted
    - Authorize Copilot CLI to access your GitHub account
-
 4. Once authenticated, you'll see the Copilot CLI prompt, ready to accept your questions and commands.
 
 > [!NOTE]
@@ -90,7 +80,6 @@ When you first use Copilot CLI in a directory, it will ask you to confirm that y
    - **Yes, proceed**: Trust for this session only
    - **Yes, and remember this folder for future sessions**: Trust permanently
    - **No, exit (Esc)**: Don't allow file access
-
 2. For this workshop, select **Yes, and remember this folder for future sessions** since you'll be working in this repository throughout.
 
 ## Verify everything is working
@@ -110,32 +99,20 @@ Let's make sure Copilot CLI is properly installed and connected.
    ```
 
 3. Copilot should explore the repository and provide a summary of the project structure.
-
 4. Try the `/help` command to see available slash commands:
 
    ```
    /help
    ```
 
-## Alternative installation methods
-
-While npm is the recommended method for codespaces, Copilot CLI can also be installed via other methods on your local machine:
-
-| Method | Command | Platform |
-|--------|---------|----------|
-| **Homebrew** | `brew install copilot-cli` | macOS, Linux |
-| **WinGet** | `winget install GitHub.Copilot` | Windows |
-| **Install script** | `curl -fsSL https://gh.io/copilot-install \| bash` | macOS, Linux |
-
 ## Summary and next steps
 
 Congratulations! You've successfully installed and authenticated GitHub Copilot CLI. You learned how to:
 
-- Open a terminal window in VS Code
-- Install Copilot CLI using npm
-- Authenticate with your GitHub account
-- Trust a directory for Copilot CLI to work with
-- Verify the installation is working correctly
+- install Copilot CLI using npm.
+- authenticate with your GitHub account.
+- trust a directory for Copilot CLI to work with.
+- verify the installation is working correctly.
 
 Now that Copilot CLI is installed, let's start using it to explore and modify code! Continue to [Exercise 3 - Using Copilot CLI][next-lesson].
 

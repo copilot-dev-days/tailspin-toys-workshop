@@ -33,7 +33,7 @@ A couple of popular existing MCP servers are:
 There are many other MCP servers available that provide access to different tools and resources. GitHub hosts an [MCP registry][mcp-registry] to enhance discoverability and contributions to the ecosystem. 
 
 > [!IMPORTANT]
-> With regard to security, treat MCP servers as you would any other dependency in your project. Before using an MCP server, carefully review its source code, verify the publisher, and consider the security implications. Only use MCP servers that you trust and be cautious about granting access to sensitive resources or operations.
+> With regards to security, treat MCP servers as you would any other dependency in your project. Before using an MCP server, carefully review its source code, verify the publisher, and consider the security implications. Only use MCP servers that you trust and be cautious about granting access to sensitive resources or operations.
 
 ## Allowing all tools
 
@@ -49,33 +49,34 @@ Because we are working in a workshop environment on a codespace, we will utilize
 MCP servers are registered in **~/.copilot/mcp-config.json**. You can update the file directly, or add them through the `/mcp add` command, which is the route you'll take here. As you add each server, or when you start Copilot CLI in the future, they'll automatically be started. 
 
 1. Return to your codespace.
-2. If not already open, open a terminal window by utilizing <kbd>Ctrl</kbd>+<kbd>\`</kbd>.
-3. If not already running, start Copilot by issuing the following command in the terminal window:
+2. If not already open, open a terminal window by selecting <kbd>Ctrl</kbd>+<kbd>\`</kbd>.
+3. If Copilot is already running, stop it by selecting <kbd>Ctrl</kbd>+<kbd>C</kbd> twice.
+4. Start Copilot by issuing the following command in the terminal window:
 
     ```bash
     copilot --allow-all-tools
     ```
 
-4. Inside Copilot CLI, use the following command to start the add MCP server interface:
+5. Inside Copilot CLI, use the following command to start the add MCP server interface:
 
     ```text
     /mcp add
     ```
 
-5. Set the **Server name** to **Svelte** and select <kbd>Tab</kbd>.
-6. Set the **Server type** to **\[3\] HTTP** and select <kbd>Tab</kbd>.
-7. Set the **URL** to **https://mcp.svelte.dev/mcp**.
-8. Select <kbd>Ctrl</kbd>+<kbd>S</kbd> to save the server.
-9. Select <kbd>a</kbd> to add another server.
-10. Follow steps 5 through 9 to register Playwright, Astro and Microsoft Learn, using the following table:
+6. Set the **Server name** to **Svelte** and select <kbd>Tab</kbd>.
+7. Set the **Server type** to **\[3\] HTTP** and select <kbd>Tab</kbd>.
+8. Set the **URL** to **https://mcp.svelte.dev/mcp**.
+9. Select <kbd>Ctrl</kbd>+<kbd>S</kbd> to save the server.
+10. Select <kbd>A</kbd> to add another server.
+11. Follow steps 5 through 9 to register Playwright, Astro and Microsoft Learn, using the following table:
 
     | Server Name | Server Type | Command or URL |
     | ----------- | ----------- | -------------- |
-    | Playwright | \[1\] Local | npx @playwright/mcp@latest |
-    | Astro | \[3\] HTTP | https://mcp.docs.astro.build/mcp |
-    | Microsoft Learn | \[3\] HTTP | https://learn.microsoft.com/api/mcp |
+    | Playwright | \[1\] Local | `npx @playwright/mcp@latest` |
+    | Astro | \[3\] HTTP | `https://mcp.docs.astro.build/mcp` |
+    | Microsoft Learn | \[3\] HTTP | `https://learn.microsoft.com/api/mcp` |
 
-11. Once complete, select <kbd>q</kbd> to exit the interface.
+12. Once complete, select <kbd>Q</kbd> to exit the interface.
 
 ## Creating a backlog of tasks
 
@@ -105,8 +106,11 @@ Now that you have set up the GitHub MCP server, you can use Copilot Agent mode t
     3. Perform a review of the project to ensure coding standards are being followed
     ```
 
-6. Press <kbd>enter</kbd> to send the prompt to Copilot.
-7. GitHub Copilot should process the request and create the issues on your GitHub repository.
+> [!TIP]
+> <kbd>Enter</kbd> automatically sends the prompt to Copilot CLI. If you wish to type longer messages across multiple lines, you can use <kbd>Shift</kbd>+<kbd>Enter</kbd> to add blank lines.
+
+6. Press <kbd>Enter</kbd> to send the prompt to Copilot.
+7. GitHub Copilot will process the request and create the issues on your GitHub repository.
 8. In a separate browser tab, navigate to your GitHub repository and select the issues tab.
 9.  You should see a list of issues that have been created by Copilot. Each issue should include a clear title and a checkbox list of acceptance criteria.
 
