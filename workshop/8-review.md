@@ -26,6 +26,7 @@ Copilot CLI has a series of slash commands available to interact with it, includ
 | `/model`           | Select AI model to use (Claude Sonnet, GPT-5, etc.)           |
 | `/plan <prompt>`   | Create an implementation plan before coding                   |
 | `/review <prompt>` | Run code review agent to analyze changes                      |
+| `/delegate`        | Delegate task to Copilot coding agent for async processing    |
 | `/session`         | Show session info and workspace summary                       |
 | `/share`           | Share session to markdown file or GitHub gist                 |
 | `/skills`          | Manage skills for enhanced capabilities                       |
