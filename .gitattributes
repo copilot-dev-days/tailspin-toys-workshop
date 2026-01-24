@@ -1,0 +1,15 @@
+# Handle line endings automatically for files detected as text
+* text=auto
+
+# Force LF line endings for shell scripts (critical for bash execution)
+*.sh text eol=lf
+
+# Force LF for other Unix-specific files
+Dockerfile text eol=lf
+.dockerignore text eol=lf
+Makefile text eol=lf
+
+# Force CRLF for Windows scripts
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
