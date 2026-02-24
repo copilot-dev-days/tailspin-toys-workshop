@@ -114,8 +114,8 @@ Next up, let's explore [some slash commands][next-lesson] to learn some addition
 | [← Previous lesson: Agent Skills][previous-lesson] | [Next lesson: Slash Commands →][next-lesson] |
 |:--|--:|
 
-[previous-lesson]: ./5-agent-skills.md
-[next-lesson]: ./7-slash-commands.md
+[previous-lesson]: ./05-agent-skills.md
+[next-lesson]: ./07-slash-commands.md
 [custom-agents]: https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli#use-custom-agents
 [creating-custom-agents]: https://docs.github.com/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents
 [awesome-copilot-agents]: https://github.com/github/awesome-copilot/tree/main/agents

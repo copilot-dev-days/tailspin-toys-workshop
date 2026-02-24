@@ -77,8 +77,8 @@ Of course, the next step from here is to [create the PR][next-lesson], which wil
 | [← Previous lesson: MCP Servers][previous-lesson] | [Next lesson: Agent Skills →][next-lesson] |
 |:--|--:|
 
-[previous-lesson]: ./3-mcp.md
-[next-lesson]: ./5-agent-skills.md
+[previous-lesson]: ./03-mcp.md
+[next-lesson]: ./05-agent-skills.md
 [using-copilot-cli]: https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli
 [about-copilot-cli]: https://docs.github.com/copilot/concepts/agents/about-copilot-cli
 [context-management]: https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli#context-management

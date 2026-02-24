@@ -146,8 +146,8 @@ You can now continue to the next exercise, where you will learn how to [provide 
 | [← Previous lesson: Installing Copilot CLI][previous-lesson] | [Next lesson: Generating Code →][next-lesson] |
 |:--|--:|
 
-[previous-lesson]: ./2-install-copilot-cli.md
-[next-lesson]: ./4-generating-code.md
+[previous-lesson]: ./02-install-copilot-cli.md
+[next-lesson]: ./04-generating-code.md
 [mcp-blog-post]: https://github.blog/ai-and-ml/llms/what-the-heck-is-mcp-and-why-is-everyone-talking-about-it/
 [github-mcp-server]: https://github.com/github/github-mcp-server
 [playwright-mcp-server]: https://github.com/microsoft/playwright-mcp

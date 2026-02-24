@@ -127,8 +127,8 @@ Now that Copilot CLI is installed, let's start using it to explore and modify co
 | [← Previous lesson: Custom Instructions][previous-lesson] | [Next lesson: MCP Servers →][next-lesson] |
 |:--|--:|
 
-[previous-lesson]: ./1-custom-instructions.md
-[next-lesson]: ./3-mcp.md
+[previous-lesson]: ./01-custom-instructions.md
+[next-lesson]: ./03-mcp.md
 [install-copilot-cli]: https://docs.github.com/copilot/how-tos/set-up/install-copilot-cli
 [about-copilot-cli]: https://docs.github.com/copilot/concepts/agents/about-copilot-cli
 [using-copilot-cli]: https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli

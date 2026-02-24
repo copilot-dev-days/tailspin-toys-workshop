@@ -128,8 +128,8 @@ There are of course more slash commands available, and more to explore with Copi
 | [← Previous lesson: Custom Agents][previous-lesson] | [Next lesson: Review →][next-lesson] |
 |:--|--:|
 
-[previous-lesson]: ./6-custom-agents.md
-[next-lesson]: ./8-review.md
+[previous-lesson]: ./06-custom-agents.md
+[next-lesson]: ./08-review.md
 [using-copilot-cli]: https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli
 [about-copilot-cli]: https://docs.github.com/copilot/concepts/agents/about-copilot-cli
 [context-management]: https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli#context-management

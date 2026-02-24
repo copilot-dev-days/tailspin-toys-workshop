@@ -73,12 +73,12 @@ This full-stack application provides an excellent playground for exploring Copil
 
 *Happy coding with GitHub Copilot CLI! 🚀*
 
-[ex0]: ./0-prereqs.md
-[ex1]: ./1-custom-instructions.md
-[ex2]: ./2-install-copilot-cli.md
-[ex3]: ./3-mcp.md
-[ex4]: ./4-generating-code.md
-[ex5]: ./5-agent-skills.md
-[ex6]: ./6-custom-agents.md
-[ex7]: ./7-slash-commands.md
-[ex8]: ./8-review.md
+[ex0]: ./00-prereqs.md
+[ex1]: ./01-custom-instructions.md
+[ex2]: ./02-install-copilot-cli.md
+[ex3]: ./03-mcp.md
+[ex4]: ./04-generating-code.md
+[ex5]: ./05-agent-skills.md
+[ex6]: ./06-custom-agents.md
+[ex7]: ./07-slash-commands.md
+[ex8]: ./08-review.md

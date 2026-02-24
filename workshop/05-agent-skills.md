@@ -105,8 +105,8 @@ Skills are perfect for tasks, but for more robust operations we want to take adv
 | [← Previous lesson: Generating Code][previous-lesson] | [Next lesson: Custom Agents →][next-lesson] |
 |:--|--:|
 
-[previous-lesson]: ./4-generating-code.md
-[next-lesson]: ./6-custom-agents.md
+[previous-lesson]: ./04-generating-code.md
+[next-lesson]: ./06-custom-agents.md
 [agent-skills-repo]: https://github.com/agentskills/agentskills
 [agent-skills-spec]: https://agentskills.io/specification
 [about-agent-skills]: https://docs.github.com/copilot/concepts/agents/about-agent-skills

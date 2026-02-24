@@ -220,8 +220,8 @@ Next we'll use [agent mode to add functionality to the site][next-lesson].
 | [← Previous lesson: Prerequisites][previous-lesson] | [Next lesson: Installing Copilot CLI →][next-lesson] |
 |:--|--:|
 
-[previous-lesson]: ./0-prereqs.md
-[next-lesson]: ./2-install-copilot-cli.md
+[previous-lesson]: ./00-prereqs.md
+[next-lesson]: ./02-install-copilot-cli.md
 [instruction-files]: https://code.visualstudio.com/docs/copilot/copilot-customization
 [python-type-hints]: https://docs.python.org/3/library/typing.html
 [games-endpoints]: ../server/routes/games.py

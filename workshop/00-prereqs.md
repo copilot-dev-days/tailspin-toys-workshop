@@ -71,4 +71,4 @@ Let's explore how you can provide context to Copilot using instruction files! Co
 [codespaces]: https://github.com/features/codespaces
 [template-repository]: https://docs.github.com/repositories/creating-and-managing-repositories/creating-a-template-repository
 [codespaces-quickstart]: https://docs.github.com/codespaces/getting-started/quickstart
-[next-lesson]: ./1-custom-instructions.md
+[next-lesson]: ./01-custom-instructions.md
