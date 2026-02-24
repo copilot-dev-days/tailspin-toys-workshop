@@ -41,7 +41,13 @@ The creation of the codespace will take several minutes, although it's still far
 > [!NOTE]
 > This workshop is built to run inside of a codespace or container. This ensures the environment you're working in has all of the necessary prerequisites installed and you'll have a smooth experience. If you wish to run the workshop locally on your system, you will need recent versions of Node.js and Python installed, as well as Visual Studio Code.
 >
-> If you are running the workshop locally, rather than creating a codespace, clone the newly created repository. Then open the cloned repository in VS Code, which you will be using in place of Codespaces.
+> If you are running the workshop locally, rather than creating a codespace, clone the repository and open it in VS Code:
+>
+> ```bash
+> git clone https://github.com/copilot-dev-days/tailspin-toys-workshop.git
+> cd tailspin-toys-workshop
+> code .
+> ```
 
 ## Summary
 
