@@ -1,8 +1,5 @@
 # Exercise 2 - Installing GitHub Copilot CLI
 
-| [← Previous lesson: Custom Instructions][previous-lesson] | [Next lesson: MCP Servers →][next-lesson] |
-|:--|--:|
-
 [GitHub Copilot CLI][about-copilot-cli] is a powerful agentic coding assistant that runs in your terminal, enabling you to explore codebases, generate code, run commands, and interact with external tools - all from the command line.
 
 ## Scenario
@@ -114,8 +111,6 @@ Congratulations! You've successfully installed and authenticated GitHub Copilot 
 - trust a directory for Copilot CLI to work with.
 - verify the installation is working correctly.
 
-Now that Copilot CLI is installed, let's start using it to explore and modify code! Continue to [Exercise 3 - Using Copilot CLI][next-lesson].
-
 ## Resources
 
 - [Installing GitHub Copilot CLI][install-copilot-cli]
@@ -124,11 +119,6 @@ Now that Copilot CLI is installed, let's start using it to explore and modify co
 
 ---
 
-| [← Previous lesson: Custom Instructions][previous-lesson] | [Next lesson: MCP Servers →][next-lesson] |
-|:--|--:|
-
-[previous-lesson]: ./01-custom-instructions.md
-[next-lesson]: ./03-mcp.md
 [install-copilot-cli]: https://docs.github.com/copilot/how-tos/set-up/install-copilot-cli
 [about-copilot-cli]: https://docs.github.com/copilot/concepts/agents/about-copilot-cli
 [using-copilot-cli]: https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli

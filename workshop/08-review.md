@@ -1,8 +1,5 @@
 # Exercise 8 - Review and Next Steps
 
-| [← Previous lesson: Slash Commands][previous-lesson] | |
-|:--|--:|
-
 Over the last several exercises, you explored some of the most common uses cases for GitHub Copilot CLI, including:
 
 - interacting with GitHub and other MCP servers.
@@ -57,10 +54,6 @@ The best way to improve your skills with any tool is to keep using the tool! Use
 
 ---
 
-| [← Previous lesson: Slash Commands][previous-lesson] | |
-|:--|--:|
-
-[previous-lesson]: ./07-slash-commands.md
 [about-copilot-cli]: https://docs.github.com/copilot/concepts/agents/about-copilot-cli
 [using-copilot-cli]: https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli
 [awesome-copilot]: https://github.com/github/awesome-copilot

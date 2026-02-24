@@ -1,8 +1,5 @@
 # Exercise 6 - Custom agents
 
-| [← Previous lesson: Agent Skills][previous-lesson] | [Next lesson: Slash Commands →][next-lesson] |
-|:--|--:|
-
 [Custom agents][custom-agents] in GitHub Copilot allow you to create specialized AI assistants tailored to specific tasks or domains within your development workflow. By defining agents through markdown files in the `.github/agents` folder of your repository, you can provide Copilot with focused instructions, best practices, coding patterns, and domain-specific knowledge that guide it to perform particular types of work more effectively. This allows teams to codify their expertise and standards into reusable agents. You might create an accessibility agent that ensures [WCAG][wcag] compliance, a security agent that follows secure coding practices, or a testing agent that maintains consistent test patterns—enabling developers to leverage these specialized capabilities on-demand for faster, more consistent implementations.
 
 You'll explore the following with custom agents:
@@ -99,8 +96,6 @@ You explored these concepts:
 - how to create a custom agent.
 - assigning a task to a custom agent.
 
-Next up, let's explore [some slash commands][next-lesson] to learn some additional tricks with Copilot CLI.
-
 ## Resources
 
 - [Custom agents][custom-agents]
@@ -111,11 +106,6 @@ Next up, let's explore [some slash commands][next-lesson] to learn some addition
 
 ---
 
-| [← Previous lesson: Agent Skills][previous-lesson] | [Next lesson: Slash Commands →][next-lesson] |
-|:--|--:|
-
-[previous-lesson]: ./05-agent-skills.md
-[next-lesson]: ./07-slash-commands.md
 [custom-agents]: https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli#use-custom-agents
 [creating-custom-agents]: https://docs.github.com/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents
 [awesome-copilot-agents]: https://github.com/github/awesome-copilot/tree/main/agents

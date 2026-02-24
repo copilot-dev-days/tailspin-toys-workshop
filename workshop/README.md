@@ -52,10 +52,6 @@ This full-stack application provides an excellent playground for exploring Copil
 | [7. Slash Commands][ex7] | CLI Features | Explore context, models, and sharing |
 | [8. Review][ex8] | Summary | Review key concepts and next steps |
 
-## Getting Started
-
-**[Start the workshop with Exercise 0: Prerequisites →][ex0]**
-
 ## Tips for Success
 
 1. **Be specific** - The more context you provide, the better the results

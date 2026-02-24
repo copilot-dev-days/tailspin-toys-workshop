@@ -1,8 +1,5 @@
 # Exercise 4 - Adding project features with GitHub Copilot CLI
 
-| [← Previous lesson: MCP Servers][previous-lesson] | [Next lesson: Agent Skills →][next-lesson] |
-|:--|--:|
-
 As you might expect, the core tasks you'll perform with GitHub Copilot CLI is to add features, functionality, and code to a project. As you've already explored, you can add instructions files and MCP servers to help guide Copilot and ensure you're getting the code you expect, following the best practices laid out by the team and community. Let's take one of the issues we generated previously and ask Copilot to help us implement it.
 
 ## Scenario
@@ -64,8 +61,6 @@ You've now added filtering functionality to the website with the help of Copilot
 - utilized plan mode to generate a plan for implementing the filtering functionality.
 - generated the code necessary to add filtering to the website with Copilot.
 
-Of course, the next step from here is to [create the PR][next-lesson], which will do with the help of a skill.
-
 ## Resources
 
 - [Using Copilot CLI][using-copilot-cli]
@@ -74,11 +69,6 @@ Of course, the next step from here is to [create the PR][next-lesson], which wil
 
 ---
 
-| [← Previous lesson: MCP Servers][previous-lesson] | [Next lesson: Agent Skills →][next-lesson] |
-|:--|--:|
-
-[previous-lesson]: ./03-mcp.md
-[next-lesson]: ./05-agent-skills.md
 [using-copilot-cli]: https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli
 [about-copilot-cli]: https://docs.github.com/copilot/concepts/agents/about-copilot-cli
 [context-management]: https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli#context-management

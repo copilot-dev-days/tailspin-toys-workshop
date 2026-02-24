@@ -1,8 +1,5 @@
 # Exercise 1 - Providing context to Copilot with instruction files
 
-| [← Previous lesson: Prerequisites][previous-lesson] | [Next lesson: Installing Copilot CLI →][next-lesson] |
-|:--|--:|
-
 Context is key across many aspects of life, and when working with generative AI. If you're performing a task which needs to be completed a particular way, or if a piece of background information is important, you want to ensure Copilot has access to that information. You can use [instruction files][instruction-files] to provide guidance so that Copilot not only understands what you want it to do but also how you want it to be done.
 
 In this exercise, you will learn how to:
@@ -205,8 +202,6 @@ Congratulations! You explored how to ensure Copilot has the right context to gen
 - use instruction files to guide Copilot for repetitive or templated tasks.
 - implement both repository-wide instructions and task-specific instructions.
 
-Next we'll use [agent mode to add functionality to the site][next-lesson].
-
 ## Resources
 
 - [Instruction files for GitHub Copilot customization][instruction-files]
@@ -217,11 +212,6 @@ Next we'll use [agent mode to add functionality to the site][next-lesson].
 
 ---
 
-| [← Previous lesson: Prerequisites][previous-lesson] | [Next lesson: Installing Copilot CLI →][next-lesson] |
-|:--|--:|
-
-[previous-lesson]: ./00-prereqs.md
-[next-lesson]: ./02-install-copilot-cli.md
 [instruction-files]: https://code.visualstudio.com/docs/copilot/copilot-customization
 [python-type-hints]: https://docs.python.org/3/library/typing.html
 [games-endpoints]: ../server/routes/games.py

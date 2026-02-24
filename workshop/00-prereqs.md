@@ -1,8 +1,5 @@
 # Exercise 0: Prerequisites
 
-| | [Next lesson: Custom Instructions →][next-lesson] |
-|:--|--:|
-
 Before you get started on the lab, there's a few tasks you need to complete to get everything ready. You need to get a copy of the repository which includes the code, then spin up a [codespace][codespaces] to use to create your code.
 
 ## Setting up the Lab Repository
@@ -53,10 +50,6 @@ The creation of the codespace will take several minutes, although it's still far
 
 Congratulations, you have created a copy of the lab repository! You also began the creation process of your codespace, which you'll use when you begin writing code.
 
-## Next step
-
-Let's explore how you can provide context to Copilot using instruction files! Continue to [Exercise 1 - Custom Instructions][next-lesson].
-
 ## Resources
 
 - [GitHub Codespaces overview][codespaces]
@@ -65,10 +58,6 @@ Let's explore how you can provide context to Copilot using instruction files! Co
 
 ---
 
-| | [Next lesson: Custom Instructions →][next-lesson] |
-|:--|--:|
-
 [codespaces]: https://github.com/features/codespaces
 [template-repository]: https://docs.github.com/repositories/creating-and-managing-repositories/creating-a-template-repository
 [codespaces-quickstart]: https://docs.github.com/codespaces/getting-started/quickstart
-[next-lesson]: ./01-custom-instructions.md

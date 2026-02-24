@@ -1,8 +1,5 @@
 # Exercise 7 - Slash commands in GitHub Copilot CLI
 
-| [← Previous lesson: Custom Agents][previous-lesson] | [Next lesson: Review →][next-lesson] |
-|:--|--:|
-
 Like any good CLI tool, GitHub Copilot CLI includes many slash commands to interact with it. These commands expose advanced functionality, "behind-the-scenes" information, or additional configuration options. You've already explored a couple with `/clear` to clear context and `/mcp` to register MCP servers. Let's explore a couple of other powerful ones, including `/context`, `/models` and `/share`.
 
 ## Scenario
@@ -113,8 +110,6 @@ Using slash commands in Copilot CLI allows you to configure it, share sessions, 
 - `/context` to see the context Copilot CLI is currently using.
 - `/models` to explore the list of available models and select a new one if you so desire.
 
-There are of course more slash commands available, and more to explore with Copilot CLI! Let's close out our journey by [reviewing what we've learned][next-lesson] and some next steps to continue learning.
-
 ## Resources
 
 - [Using Copilot CLI][using-copilot-cli]
@@ -125,11 +120,6 @@ There are of course more slash commands available, and more to explore with Copi
 
 ---
 
-| [← Previous lesson: Custom Agents][previous-lesson] | [Next lesson: Review →][next-lesson] |
-|:--|--:|
-
-[previous-lesson]: ./06-custom-agents.md
-[next-lesson]: ./08-review.md
 [using-copilot-cli]: https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli
 [about-copilot-cli]: https://docs.github.com/copilot/concepts/agents/about-copilot-cli
 [context-management]: https://docs.github.com/copilot/how-tos/use-copilot-agents/use-copilot-cli#context-management

@@ -1,8 +1,5 @@
 # Exercise 3 - Using MCP Servers with Copilot CLI
 
-| [← Previous lesson: Installing Copilot CLI][previous-lesson] | [Next lesson: Generating Code →][next-lesson] |
-|:--|--:|
-
 There's more to writing code than just writing code. Issues need to be filed, external services need to be called, and information needs to be gathered. Typically this involves interacting with external tools, which can break a developer's flow. Through the power of Model Context Protocol (MCP), you can access all of this functionality right from Copilot!
 
 ## Scenario
@@ -131,8 +128,6 @@ To recap, in this exercise you:
 
 With the GitHub MCP server configured, you can now use GitHub Copilot CLI to perform additional actions on your behalf, like creating new repositories, managing pull requests, and searching for information across your repositories.
 
-You can now continue to the next exercise, where you will learn how to [provide Copilot guidance with custom instructions][next-lesson] to ensure code is generated following your organization's defined patterns and practices.
-
 ## Resources
 
 - [What the heck is MCP and why is everyone talking about it?][mcp-blog-post]
@@ -143,11 +138,6 @@ You can now continue to the next exercise, where you will learn how to [provide 
 
 ---
 
-| [← Previous lesson: Installing Copilot CLI][previous-lesson] | [Next lesson: Generating Code →][next-lesson] |
-|:--|--:|
-
-[previous-lesson]: ./02-install-copilot-cli.md
-[next-lesson]: ./04-generating-code.md
 [mcp-blog-post]: https://github.blog/ai-and-ml/llms/what-the-heck-is-mcp-and-why-is-everyone-talking-about-it/
 [github-mcp-server]: https://github.com/github/github-mcp-server
 [playwright-mcp-server]: https://github.com/microsoft/playwright-mcp

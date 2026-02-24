@@ -1,8 +1,5 @@
 # Exercise 5 - Using agent skills
 
-| [← Previous lesson: Generating Code][previous-lesson] | [Next lesson: Custom Agents →][next-lesson] |
-|:--|--:|
-
 Agent Skills are folders of instructions, scripts, and resources that Copilot can load when relevant to improve its performance in specialized tasks. [Agent Skills is an open standard][agent-skills-repo], used by a range of different agents. Agent skills works in Copilot Chat in Agent Mode, Copilot Coding Agent (CCA), and Copilot CLI.
 
 Let's explore skills, how they're utilized by AI agents, and how we can use a skill to ensure actions are performed according to the specifications set forth by our team.
@@ -91,8 +88,6 @@ With the help of an agent skill, you created a new PR which matches documented r
 - learned how skills are utilized by the AI agent.
 - created a PR which matches the guidelines with the help of the skill.
 
-Skills are perfect for tasks, but for more robust operations we want to take advantage of [custom agents][next-lesson], which we'll explore next!
-
 ## Resources
 
 - [About Agent Skills][about-agent-skills]
@@ -102,11 +97,6 @@ Skills are perfect for tasks, but for more robust operations we want to take adv
 
 ---
 
-| [← Previous lesson: Generating Code][previous-lesson] | [Next lesson: Custom Agents →][next-lesson] |
-|:--|--:|
-
-[previous-lesson]: ./04-generating-code.md
-[next-lesson]: ./06-custom-agents.md
 [agent-skills-repo]: https://github.com/agentskills/agentskills
 [agent-skills-spec]: https://agentskills.io/specification
 [about-agent-skills]: https://docs.github.com/copilot/concepts/agents/about-agent-skills
