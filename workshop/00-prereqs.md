@@ -2,7 +2,7 @@
 
 Before you get started on the lab, there's a few tasks you need to complete to get everything ready. You should first create your own copy of the repository, then choose whether to work in a [codespace][codespaces] or by cloning your own repository locally.
 
-## Setting up the lab repository
+## Setting up the Lab Repository
 
 To create a copy of the repository for the code you'll create an instance from the [template][template-repository]. The new instance will contain all of the necessary files for the lab, and you'll use it as you work through the exercises. 
 
@@ -17,11 +17,11 @@ To create a copy of the repository for the code you'll create an instance from t
 
 4. Make a note of the repository path you created (**organization-or-user-name/repository-name**), as you will be referring to this later in the lab.
 
-## Choose your development environment
+## Choose Your Development Environment
 
 Now that you've created your own repository, choose one of the following options:
 
-### Option A: Create a codespace for your repository (recommended)
+### Option A: Create a Codespace for your Repository (recommended)
 
 [GitHub Codespaces][codespaces] are a cloud-based development environment that allows you to write, run, and debug code directly in your browser. It provides a fully-featured IDE with support for multiple programming languages, extensions, and tools.
 
@@ -36,7 +36,7 @@ Now that you've created your own repository, choose one of the following options
 
 The creation of the codespace will take several minutes, although it's still far quicker than having to manually install all the services! That said, you can use this time to explore other features of GitHub Copilot, which we'll turn your attention to next!
 
-### Option B: Clone your repository locally
+### Option B: Clone your Repository locally
 
 If you prefer to work locally rather than in a codespace, clone your own repository and open it in VS Code:
 
