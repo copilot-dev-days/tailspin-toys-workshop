@@ -130,6 +130,15 @@
                 return match;
             });
 
+            // Convert reference-style link definitions (e.g. [ex0]: ./00-prereqs.md) to step.html links
+            md = md.replace(/^(\[[^\]]+\]):\s*\.\/(\d+-[^.\s]+)\.md\s*$/gm, function(match, label, slug) {
+                const found = steps.find(s => s.id === slug || s.file === `workshop/${slug}.md`);
+                if (found) {
+                    return `${label}: step.html?step=${found.id}`;
+                }
+                return match;
+            });
+
             return md;
         }
 
