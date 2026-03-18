@@ -29,10 +29,10 @@ jobs:
           cp -r docs/* ./_site/
           mkdir -p ./_site/workshop
           cp -r workshop/images ./_site/workshop/
-          src_count=$(find workshop/images -maxdepth 1 -type f | wc -l)
-          dest_count=$(find ./_site/workshop/images -maxdepth 1 -type f | wc -l)
-          test "$src_count" -gt 0
-          test "$src_count" -eq "$dest_count"
+          src_count=$(find workshop/images -type f | wc -l)
+          dest_count=$(find ./_site/workshop/images -type f | wc -l)
+          [ "$src_count" -gt 0 ] || { echo "No source workshop images found at workshop/images."; exit 1; }
+          [ "$src_count" -eq "$dest_count" ] || { echo "Image copy mismatch: source=$src_count destination=$dest_count."; exit 1; }
           touch ./_site/.nojekyll
 
       - uses: actions/configure-pages@v4
