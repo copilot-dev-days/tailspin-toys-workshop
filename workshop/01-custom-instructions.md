@@ -202,6 +202,9 @@ Congratulations! You explored how to ensure Copilot has the right context to gen
 - use instruction files to guide Copilot for repetitive or templated tasks.
 - implement both repository-wide instructions and task-specific instructions.
 
+> [!IMPORTANT]
+> If you're using Copilot CLI, you can run `/init` to generate instruction files as a starting point.
+
 ## Resources
 
 - [Instruction files for GitHub Copilot customization][instruction-files]
