@@ -176,7 +176,13 @@
                     return `${label}: ${GITHUB_RAW_BASE}${stepDir}${cleanPath}${title || ''}`;
                 });
                 let html = marked.parse(md);
-                html = html.replaceAll('type="checkbox" disabled', 'type="checkbox"');
+                const parser = new DOMParser();
+                const parsedDocument = parser.parseFromString(html, 'text/html');
+                const taskListCheckboxSelector = 'li.task-list-item input[type="checkbox"][disabled]';
+                parsedDocument.querySelectorAll(taskListCheckboxSelector).forEach((checkbox) => {
+                    checkbox.removeAttribute('disabled');
+                });
+                html = parsedDocument.body.innerHTML;
                 contentEl.innerHTML = `<div class="markdown">${html}</div>`;
 
                 // Fire confetti on last step
