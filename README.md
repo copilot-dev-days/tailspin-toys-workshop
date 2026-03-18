@@ -2,9 +2,14 @@
 
 This repository contains the project for a guided workshop to explore GitHub Copilot CLI. The project is a website for a fictional game crowd-funding company, with a [Flask](https://flask.palletsprojects.com/en/stable/) backend using [SQLAlchemy](https://www.sqlalchemy.org/) and [Astro](https://astro.build/) frontend using [Svelte](https://svelte.dev/) for dynamic pages.
 
-## Open in Codespaces
+## Repository setup
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/copilot-dev-days/tailspin-toys-workshop)
+Create your own repository from this template first, then either:
+
+- create a Codespace from your repository, or
+- clone your repository locally.
+
+Start with [workshop/00-prereqs.md](./workshop/00-prereqs.md) for the full setup flow.
 
 ## Start the workshop
 
