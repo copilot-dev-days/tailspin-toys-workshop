@@ -1,6 +1,6 @@
 # Exercise 0: Prerequisites
 
-Before you get started on the lab, there's a few tasks you need to complete to get everything ready. You need to get a copy of the repository which includes the code, then spin up a [codespace][codespaces] to use to create your code.
+Before you get started on the lab, there's a few tasks you need to complete to get everything ready. You should first create your own copy of the repository, then choose whether to work in a [codespace][codespaces] or by cloning your own repository locally.
 
 ## Setting up the Lab Repository
 
@@ -17,9 +17,13 @@ To create a copy of the repository for the code you'll create an instance from t
 
 4. Make a note of the repository path you created (**organization-or-user-name/repository-name**), as you will be referring to this later in the lab.
 
-## Creating a codespace
+## Choose Your Development Environment
 
-Next up, you'll be using a codespace to complete the lab exercises. [GitHub Codespaces][codespaces] are a cloud-based development environment that allows you to write, run, and debug code directly in your browser. It provides a fully-featured IDE with support for multiple programming languages, extensions, and tools.
+Now that you've created your own repository, choose one of the following options:
+
+### Option A: Create a Codespace for your Repository (recommended)
+
+[GitHub Codespaces][codespaces] are a cloud-based development environment that allows you to write, run, and debug code directly in your browser. It provides a fully-featured IDE with support for multiple programming languages, extensions, and tools.
 
 1. Navigate to your newly created repository.
 2. Select the green **Code** button.
@@ -32,23 +36,25 @@ Next up, you'll be using a codespace to complete the lab exercises. [GitHub Code
 
 The creation of the codespace will take several minutes, although it's still far quicker than having to manually install all the services! That said, you can use this time to explore other features of GitHub Copilot, which we'll turn your attention to next!
 
+### Option B: Clone your Repository locally
+
+If you prefer to work locally rather than in a codespace, clone your own repository and open it in VS Code:
+
+```bash
+git clone https://github.com/<organization-or-user-name>/<repository-name>.git
+cd <repository-name>
+code .
+```
+
 > [!IMPORTANT]
-> You'll return to the codespace in a future exercise. For the time being, leave it open in a tab in your browser.
+> If you chose Option A, you'll return to the codespace in a future exercise. For the time being, leave it open in a tab in your browser.
 
 > [!NOTE]
 > This workshop is built to run inside of a codespace or container. This ensures the environment you're working in has all of the necessary prerequisites installed and you'll have a smooth experience. If you wish to run the workshop locally on your system, you will need recent versions of Node.js and Python installed, as well as Visual Studio Code.
->
-> If you are running the workshop locally, rather than creating a codespace, clone the repository and open it in VS Code:
->
-> ```bash
-> git clone https://github.com/copilot-dev-days/tailspin-toys-workshop.git
-> cd tailspin-toys-workshop
-> code .
-> ```
 
 ## Summary
 
-Congratulations, you have created a copy of the lab repository! You also began the creation process of your codespace, which you'll use when you begin writing code.
+Congratulations, you have created a copy of the lab repository and selected your development environment.
 
 ## Resources
 
