@@ -29,6 +29,7 @@ jobs:
           cp -r docs/* ./_site/
           mkdir -p ./_site/workshop
           cp -r workshop/images ./_site/workshop/
+          test -f ./_site/workshop/images/1-extensions-updates.png
           touch ./_site/.nojekyll
 
       - uses: actions/configure-pages@v4
