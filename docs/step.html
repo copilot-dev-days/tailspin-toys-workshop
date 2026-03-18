@@ -171,7 +171,7 @@
                     return `![${alt}](${GITHUB_RAW_BASE}${stepDir}${cleanPath})`;
                 });
                 // Handle reference-style image definitions: [label]: ./images/foo.png
-                md = md.replace(/^(\[[^\]]+\]):\s*((?!https?:\/\/|\/\/)\S+\.(png|jpe?g|gif|svg|webp))(\s.*)?$/gim, (match, label, path, ext, title) => {
+                md = md.replace(/^(\[[^\]]+\]):\s*((?!https?:\/\/|\/\/)\S+\.(png|jpe?g|gif|svg|webp))([ \t].*)?$/gim, (match, label, path, ext, title) => {
                     const cleanPath = path.replace(/^\.\//, '');
                     return `${label}: ${GITHUB_RAW_BASE}${stepDir}${cleanPath}${title || ''}`;
                 });
