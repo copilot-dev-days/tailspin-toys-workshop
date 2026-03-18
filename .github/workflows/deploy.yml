@@ -27,6 +27,8 @@ jobs:
         run: |
           mkdir -p ./_site
           cp -r docs/* ./_site/
+          mkdir -p ./_site/workshop
+          cp -r workshop/images ./_site/workshop/
           touch ./_site/.nojekyll
 
       - uses: actions/configure-pages@v4
