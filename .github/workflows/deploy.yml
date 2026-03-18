@@ -29,7 +29,10 @@ jobs:
           cp -r docs/* ./_site/
           mkdir -p ./_site/workshop
           cp -r workshop/images ./_site/workshop/
-          test -f ./_site/workshop/images/1-extensions-updates.png
+          src_count=$(find workshop/images -maxdepth 1 -type f | wc -l)
+          dest_count=$(find ./_site/workshop/images -maxdepth 1 -type f | wc -l)
+          test "$src_count" -gt 0
+          test "$src_count" -eq "$dest_count"
           touch ./_site/.nojekyll
 
       - uses: actions/configure-pages@v4
