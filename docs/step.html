@@ -156,9 +156,15 @@
                 md = processMarkdown(md);
                 // Fix relative image paths to resolve against the markdown file's directory
                 const stepDir = step.file.substring(0, step.file.lastIndexOf('/') + 1);
+                // Handle inline-style images: ![alt](./images/foo.png)
                 md = md.replace(/!\[([^\]]*)\]\((?!https?:\/\/|\/\/)([^)]+)\)/g, (match, alt, path) => {
                     const cleanPath = path.replace(/^\.\//, '');
                     return `![${alt}](${GITHUB_RAW_BASE}${stepDir}${cleanPath})`;
+                });
+                // Handle reference-style image definitions: [label]: ./images/foo.png
+                md = md.replace(/^(\[[^\]]+\]):\s*((?!https?:\/\/|\/\/)\S+\.(png|jpe?g|gif|svg|webp))(\s.*)?$/gim, (match, label, path, ext, title) => {
+                    const cleanPath = path.replace(/^\.\//, '');
+                    return `${label}: ${GITHUB_RAW_BASE}${stepDir}${cleanPath}${title || ''}`;
                 });
                 contentEl.innerHTML = `<div class="markdown">${marked.parse(md)}</div>`;
 
