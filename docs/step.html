@@ -148,6 +148,8 @@
                 return;
             }
 
+            console.warn('Using deprecated execCommand copy fallback; prefer loading the workshop docs over HTTP(S).');
+
             const textArea = document.createElement('textarea');
             textArea.value = text;
             textArea.setAttribute('readonly', '');
@@ -179,12 +181,13 @@
                 button.dataset.copyState = 'error';
             }
 
-            window.clearTimeout(Number(button.dataset.resetTimerId || '0'));
+            const existingResetTimerId = button._resetTimerId ?? 0;
+            window.clearTimeout(existingResetTimerId);
             const resetTimerId = window.setTimeout(() => {
                 button.textContent = 'Copy';
                 button.dataset.copyState = 'idle';
             }, 2000);
-            button.dataset.resetTimerId = String(resetTimerId);
+            button._resetTimerId = resetTimerId;
         }
 
         function enhanceCodeBlocks(container) {
@@ -201,7 +204,16 @@
                 button.className = 'copy-code-btn';
                 button.textContent = 'Copy';
                 button.dataset.copyState = 'idle';
-                button.setAttribute('aria-label', `Copy code block ${index + 1}`);
+                const code = pre.querySelector('code');
+                const codePreview = (code?.textContent ?? '')
+                    .split('\n')
+                    .find((line) => line.trim().length > 0)
+                    ?.trim()
+                    .slice(0, 40);
+                const ariaLabel = codePreview
+                    ? `Copy code block ${index + 1}: ${codePreview}`
+                    : `Copy code block ${index + 1}`;
+                button.setAttribute('aria-label', ariaLabel);
                 button.addEventListener('click', () => {
                     void copyCodeToClipboard(button);
                 });
