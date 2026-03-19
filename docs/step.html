@@ -142,6 +142,28 @@
             return md;
         }
 
+        async function writeTextToClipboard(text) {
+            if (navigator.clipboard?.writeText && window.isSecureContext) {
+                await navigator.clipboard.writeText(text);
+                return;
+            }
+
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.setAttribute('readonly', '');
+            textArea.style.position = 'absolute';
+            textArea.style.left = '-9999px';
+            document.body.appendChild(textArea);
+            textArea.select();
+
+            const copied = document.execCommand('copy');
+            document.body.removeChild(textArea);
+
+            if (!copied) {
+                throw new Error('Copy command failed');
+            }
+        }
+
         async function copyCodeToClipboard(button) {
             const code = button.parentElement?.querySelector('pre code');
             if (!code) {
@@ -149,7 +171,7 @@
             }
 
             try {
-                await navigator.clipboard.writeText(code.textContent ?? '');
+                await writeTextToClipboard(code.textContent ?? '');
                 button.textContent = 'Copied!';
                 button.dataset.copyState = 'copied';
             } catch (err) {
@@ -157,10 +179,12 @@
                 button.dataset.copyState = 'error';
             }
 
-            window.setTimeout(() => {
+            window.clearTimeout(Number(button.dataset.resetTimerId || '0'));
+            const resetTimerId = window.setTimeout(() => {
                 button.textContent = 'Copy';
                 button.dataset.copyState = 'idle';
             }, 2000);
+            button.dataset.resetTimerId = String(resetTimerId);
         }
 
         function enhanceCodeBlocks(container) {
