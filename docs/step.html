@@ -69,6 +69,9 @@
 
         const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
         const GITHUB_RAW_BASE = isLocal ? '../' : 'https://raw.githubusercontent.com/copilot-dev-days/tailspin-toys-workshop/main/';
+        const COPY_FEEDBACK_DURATION_MS = 2000;
+        const MAX_CODE_PREVIEW_LENGTH = 40;
+        const copyResetTimers = new WeakMap();
 
         let currentIndex = 0;
 
@@ -142,6 +145,95 @@
             return md;
         }
 
+        async function writeTextToClipboard(text) {
+            if (navigator.clipboard?.writeText) {
+                await navigator.clipboard.writeText(text);
+                return;
+            }
+
+            console.warn('Using deprecated execCommand copy fallback; prefer loading the workshop docs over HTTPS.');
+
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.setAttribute('readonly', '');
+            textArea.style.position = 'absolute';
+            textArea.style.left = '-9999px';
+            document.body.appendChild(textArea);
+            textArea.select();
+
+            const copied = document.execCommand('copy');
+            document.body.removeChild(textArea);
+
+            if (!copied) {
+                throw new Error('Unable to copy to clipboard. Please copy the code manually.');
+            }
+        }
+
+        function getCodePreview(code) {
+            const codeText = code?.textContent ?? '';
+            if (!codeText.trim()) {
+                return '';
+            }
+
+            return codeText
+                .split('\n')
+                .find((line) => line.trim().length > 0)
+                ?.trim()
+                .slice(0, MAX_CODE_PREVIEW_LENGTH) ?? '';
+        }
+
+        async function copyCodeToClipboard(button) {
+            const code = button.parentElement?.querySelector('pre code');
+            if (!code) {
+                return;
+            }
+
+            try {
+                await writeTextToClipboard(code.textContent);
+                button.textContent = 'Copied!';
+                button.dataset.copyState = 'copied';
+            } catch (err) {
+                button.textContent = 'Failed';
+                button.dataset.copyState = 'error';
+            }
+
+            window.clearTimeout(copyResetTimers.get(button));
+            const resetTimerId = window.setTimeout(() => {
+                button.textContent = 'Copy';
+                button.dataset.copyState = 'idle';
+            }, COPY_FEEDBACK_DURATION_MS);
+            copyResetTimers.set(button, resetTimerId);
+        }
+
+        function enhanceCodeBlocks(container) {
+            container.querySelectorAll('pre').forEach((pre, index) => {
+                if (pre.parentElement?.classList.contains('code-block')) {
+                    return;
+                }
+
+                const wrapper = document.createElement('div');
+                wrapper.className = 'code-block';
+
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'copy-code-btn';
+                button.textContent = 'Copy';
+                button.dataset.copyState = 'idle';
+                const code = pre.querySelector('code');
+                const codePreview = getCodePreview(code);
+                const ariaLabel = codePreview
+                    ? `Copy code block ${index + 1}: ${codePreview}`
+                    : `Copy code block ${index + 1}`;
+                button.setAttribute('aria-label', ariaLabel);
+                button.addEventListener('click', () => {
+                    void copyCodeToClipboard(button);
+                });
+
+                pre.parentNode.insertBefore(wrapper, pre);
+                wrapper.append(button, pre);
+            });
+        }
+
         async function loadStep(stepId) {
             const step = steps.find(s => s.id === stepId);
             if (!step) {
@@ -184,6 +276,7 @@
                 });
                 html = parsedDocument.body.innerHTML;
                 contentEl.innerHTML = `<div class="markdown">${html}</div>`;
+                enhanceCodeBlocks(contentEl);
 
                 // Fire confetti on last step
                 if (currentIndex === steps.length - 1 && typeof confetti === 'function') {

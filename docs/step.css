@@ -10,6 +10,10 @@
             --border-color: #2a2a3a;
             --success-green: #4ec9b0;
             --warning-yellow: #dcdcaa;
+            --code-block-top-padding: 3.5rem;
+            --code-block-top-padding-mobile: 4.25rem;
+            --code-block-horizontal-padding: 1.25rem;
+            --code-block-bottom-padding: 1.25rem;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Space Grotesk', sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.7; min-height: 100vh; }
@@ -54,8 +58,39 @@
         .markdown input[type="checkbox"]:checked::after { content: '✓'; position: absolute; color: var(--bg-dark); font-size: 12px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
         .markdown code { font-family: 'JetBrains Mono', monospace; font-size: 0.875em; }
         .markdown :not(pre) > code { background: var(--bg-code); padding: 0.2em 0.4em; border-radius: 4px; color: var(--warning-yellow); }
-        .markdown pre { background: var(--bg-code); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; overflow-x: auto; margin: 1.5rem 0; }
+        .markdown .code-block { position: relative; margin: 1.5rem 0; }
+        .markdown pre {
+            background: var(--bg-code);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: var(--code-block-top-padding) var(--code-block-horizontal-padding) var(--code-block-bottom-padding);
+            overflow-x: auto;
+            margin: 0;
+        }
         .markdown pre code { color: var(--text-primary); background: none; padding: 0; }
+        .markdown .copy-code-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 4.75rem;
+            padding: 0.4rem 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+            background: rgba(18, 18, 26, 0.95);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .markdown .copy-code-btn:hover { border-color: var(--neon-cyan); color: var(--neon-cyan); }
+        .markdown .copy-code-btn:focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 2px; }
+        .markdown .copy-code-btn[data-copy-state="copied"] { border-color: var(--success-green); color: var(--success-green); }
+        .markdown .copy-code-btn[data-copy-state="error"] { border-color: #ff6b6b; color: #ff6b6b; }
         .markdown blockquote { background: var(--bg-card); border-left: 4px solid var(--neon-cyan); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin: 1.5rem 0; }
         .markdown blockquote p { margin: 0; color: var(--text-secondary); }
         .markdown blockquote p:first-child { font-weight: 600; color: var(--neon-cyan); }
@@ -75,4 +110,5 @@
             .sidebar { display: none; }
             .main { padding: 1.5rem; }
             .header-title { display: none; }
+            .markdown pre { padding-top: var(--code-block-top-padding-mobile); }
         }
