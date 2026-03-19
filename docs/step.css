@@ -59,7 +59,25 @@
         .markdown .code-block { position: relative; margin: 1.5rem 0; }
         .markdown pre { background: var(--bg-code); border: 1px solid var(--border-color); border-radius: 8px; padding: var(--code-block-top-padding) 1.25rem 1.25rem; overflow-x: auto; margin: 0; }
         .markdown pre code { color: var(--text-primary); background: none; padding: 0; }
-        .markdown .copy-code-btn { position: absolute; top: 0.75rem; right: 0.75rem; display: inline-flex; align-items: center; justify-content: center; min-width: 4.75rem; padding: 0.4rem 0.75rem; border: 1px solid var(--border-color); border-radius: 999px; background: rgba(18, 18, 26, 0.95); color: var(--text-primary); font-family: inherit; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+        .markdown .copy-code-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 4.75rem;
+            padding: 0.4rem 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+            background: rgba(18, 18, 26, 0.95);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
         .markdown .copy-code-btn:hover { border-color: var(--neon-cyan); color: var(--neon-cyan); }
         .markdown .copy-code-btn:focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 2px; }
         .markdown .copy-code-btn[data-copy-state="copied"] { border-color: var(--success-green); color: var(--success-green); }

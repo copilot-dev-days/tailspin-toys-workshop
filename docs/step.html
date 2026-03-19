@@ -69,6 +69,9 @@
 
         const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
         const GITHUB_RAW_BASE = isLocal ? '../' : 'https://raw.githubusercontent.com/copilot-dev-days/tailspin-toys-workshop/main/';
+        const COPY_FEEDBACK_DURATION_MS = 2000;
+        const MAX_CODE_PREVIEW_LENGTH = 40;
+        const copyResetTimers = new WeakMap();
 
         let currentIndex = 0;
 
@@ -148,7 +151,7 @@
                 return;
             }
 
-            console.warn('Using deprecated execCommand copy fallback; prefer loading the workshop docs over HTTP(S).');
+            console.warn('Using deprecated execCommand copy fallback; prefer loading the workshop docs over HTTPS.');
 
             const textArea = document.createElement('textarea');
             textArea.value = text;
@@ -166,6 +169,19 @@
             }
         }
 
+        function getCodePreview(code) {
+            const codeText = code?.textContent ?? '';
+            if (!codeText.trim()) {
+                return '';
+            }
+
+            return codeText
+                .split('\n')
+                .find((line) => line.trim().length > 0)
+                ?.trim()
+                .slice(0, MAX_CODE_PREVIEW_LENGTH) ?? '';
+        }
+
         async function copyCodeToClipboard(button) {
             const code = button.parentElement?.querySelector('pre code');
             if (!code) {
@@ -181,13 +197,15 @@
                 button.dataset.copyState = 'error';
             }
 
-            const existingResetTimerId = button._resetTimerId ?? 0;
-            window.clearTimeout(existingResetTimerId);
+            const existingResetTimerId = copyResetTimers.get(button);
+            if (existingResetTimerId !== undefined) {
+                window.clearTimeout(existingResetTimerId);
+            }
             const resetTimerId = window.setTimeout(() => {
                 button.textContent = 'Copy';
                 button.dataset.copyState = 'idle';
-            }, 2000);
-            button._resetTimerId = resetTimerId;
+            }, COPY_FEEDBACK_DURATION_MS);
+            copyResetTimers.set(button, resetTimerId);
         }
 
         function enhanceCodeBlocks(container) {
@@ -205,17 +223,17 @@
                 button.textContent = 'Copy';
                 button.dataset.copyState = 'idle';
                 const code = pre.querySelector('code');
-                const codePreview = (code?.textContent ?? '')
-                    .split('\n')
-                    .find((line) => line.trim().length > 0)
-                    ?.trim()
-                    .slice(0, 40);
+                const codePreview = getCodePreview(code);
                 const ariaLabel = codePreview
                     ? `Copy code block ${index + 1}: ${codePreview}`
                     : `Copy code block ${index + 1}`;
                 button.setAttribute('aria-label', ariaLabel);
-                button.addEventListener('click', () => {
-                    void copyCodeToClipboard(button);
+                button.addEventListener('click', async () => {
+                    try {
+                        await copyCodeToClipboard(button);
+                    } catch (err) {
+                        console.error('Failed to copy code block.', err);
+                    }
                 });
 
                 pre.parentNode.insertBefore(wrapper, pre);
