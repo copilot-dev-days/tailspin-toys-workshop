@@ -146,7 +146,7 @@
         }
 
         async function writeTextToClipboard(text) {
-            if (navigator.clipboard?.writeText && window.isSecureContext) {
+            if (navigator.clipboard?.writeText) {
                 await navigator.clipboard.writeText(text);
                 return;
             }
@@ -197,10 +197,7 @@
                 button.dataset.copyState = 'error';
             }
 
-            const existingResetTimerId = copyResetTimers.get(button);
-            if (existingResetTimerId !== undefined) {
-                window.clearTimeout(existingResetTimerId);
-            }
+            window.clearTimeout(copyResetTimers.get(button));
             const resetTimerId = window.setTimeout(() => {
                 button.textContent = 'Copy';
                 button.dataset.copyState = 'idle';
@@ -228,12 +225,8 @@
                     ? `Copy code block ${index + 1}: ${codePreview}`
                     : `Copy code block ${index + 1}`;
                 button.setAttribute('aria-label', ariaLabel);
-                button.addEventListener('click', async () => {
-                    try {
-                        await copyCodeToClipboard(button);
-                    } catch (err) {
-                        console.error('Failed to copy code block.', err);
-                    }
+                button.addEventListener('click', () => {
+                    void copyCodeToClipboard(button);
                 });
 
                 pre.parentNode.insertBefore(wrapper, pre);
