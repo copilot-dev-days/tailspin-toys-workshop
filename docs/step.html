@@ -165,7 +165,7 @@
             document.body.removeChild(textArea);
 
             if (!copied) {
-                throw new Error('Copy command failed');
+                throw new Error('Unable to copy to clipboard. Please copy the code manually.');
             }
         }
 
@@ -189,7 +189,7 @@
             }
 
             try {
-                await writeTextToClipboard(code.textContent ?? '');
+                await writeTextToClipboard(code.textContent);
                 button.textContent = 'Copied!';
                 button.dataset.copyState = 'copied';
             } catch (err) {

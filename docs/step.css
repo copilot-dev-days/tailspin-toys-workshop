@@ -12,6 +12,8 @@
             --warning-yellow: #dcdcaa;
             --code-block-top-padding: 3.5rem;
             --code-block-top-padding-mobile: 4.25rem;
+            --code-block-horizontal-padding: 1.25rem;
+            --code-block-bottom-padding: 1.25rem;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Space Grotesk', sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.7; min-height: 100vh; }
@@ -57,7 +59,14 @@
         .markdown code { font-family: 'JetBrains Mono', monospace; font-size: 0.875em; }
         .markdown :not(pre) > code { background: var(--bg-code); padding: 0.2em 0.4em; border-radius: 4px; color: var(--warning-yellow); }
         .markdown .code-block { position: relative; margin: 1.5rem 0; }
-        .markdown pre { background: var(--bg-code); border: 1px solid var(--border-color); border-radius: 8px; padding: var(--code-block-top-padding) 1.25rem 1.25rem; overflow-x: auto; margin: 0; }
+        .markdown pre {
+            background: var(--bg-code);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: var(--code-block-top-padding) var(--code-block-horizontal-padding) var(--code-block-bottom-padding);
+            overflow-x: auto;
+            margin: 0;
+        }
         .markdown pre code { color: var(--text-primary); background: none; padding: 0; }
         .markdown .copy-code-btn {
             position: absolute;
