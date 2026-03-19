@@ -142,6 +142,51 @@
             return md;
         }
 
+        async function copyCodeToClipboard(button) {
+            const code = button.parentElement?.querySelector('pre code');
+            if (!code) {
+                return;
+            }
+
+            try {
+                await navigator.clipboard.writeText(code.textContent ?? '');
+                button.textContent = 'Copied!';
+                button.dataset.copyState = 'copied';
+            } catch (err) {
+                button.textContent = 'Failed';
+                button.dataset.copyState = 'error';
+            }
+
+            window.setTimeout(() => {
+                button.textContent = 'Copy';
+                button.dataset.copyState = 'idle';
+            }, 2000);
+        }
+
+        function enhanceCodeBlocks(container) {
+            container.querySelectorAll('pre').forEach((pre, index) => {
+                if (pre.parentElement?.classList.contains('code-block')) {
+                    return;
+                }
+
+                const wrapper = document.createElement('div');
+                wrapper.className = 'code-block';
+
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'copy-code-btn';
+                button.textContent = 'Copy';
+                button.dataset.copyState = 'idle';
+                button.setAttribute('aria-label', `Copy code block ${index + 1}`);
+                button.addEventListener('click', () => {
+                    void copyCodeToClipboard(button);
+                });
+
+                pre.parentNode.insertBefore(wrapper, pre);
+                wrapper.append(button, pre);
+            });
+        }
+
         async function loadStep(stepId) {
             const step = steps.find(s => s.id === stepId);
             if (!step) {
@@ -184,6 +229,7 @@
                 });
                 html = parsedDocument.body.innerHTML;
                 contentEl.innerHTML = `<div class="markdown">${html}</div>`;
+                enhanceCodeBlocks(contentEl);
 
                 // Fire confetti on last step
                 if (currentIndex === steps.length - 1 && typeof confetti === 'function') {
