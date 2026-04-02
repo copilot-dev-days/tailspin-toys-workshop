@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LSC44NDPLQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LSC44NDPLQ');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop GitHub Copilot CLI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <link rel="alternate" hreflang="en" href="https://copilot-dev-days.github.io/tailspin-toys-workshop/">
+    <link rel="alternate" hreflang="pt-BR" href="https://copilot-dev-days.github.io/tailspin-toys-workshop/pt_BR/">
+    <link rel="alternate" hreflang="es" href="https://copilot-dev-days.github.io/tailspin-toys-workshop/es/">
+    <link rel="alternate" hreflang="x-default" href="https://copilot-dev-days.github.io/tailspin-toys-workshop/">
+    <link rel="stylesheet" href="../step.css">
+    <link rel="stylesheet" href="../light-theme.css">
+    <script src="../theme-toggle.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="header-brand">
+                <span class="brand-icon">💻</span>
+                <span class="header-title">Workshop Copilot CLI</span>
+            </a>
+            <div class="header-nav">
+                <div class="locale-picker" id="localePicker">
+                    <button type="button" class="locale-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Selecionar idioma">🌐</button>
+                    <ul role="listbox" aria-label="Idioma">
+                        <li role="option" data-locale="en" aria-selected="false">🇬🇧 English</li>
+                        <li role="option" data-locale="es" aria-selected="false">🇪🇸 Español</li>
+                        <li role="option" data-locale="pt-BR" aria-selected="true" class="active">🇧🇷 Português (Brasil)</li>
+                    </ul>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()">☀️ Claro</button>
+                <button class="nav-btn" id="prevBtn" onclick="navigate(-1)" disabled>← Anterior</button>
+                <button class="nav-btn" id="nextBtn" onclick="navigate(1)">Próximo →</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Passos do Workshop</div>
+                <nav id="stepNav"></nav>
+            </div>
+        </aside>
+
+        <main class="main">
+            <div class="content">
+                <div id="markdownContent">
+                    <div class="loading">Carregando conteúdo</div>
+                </div>
+                <div class="nav-footer" id="navFooter"></div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const steps = [
+            { id: 'readme', file: 'workshop/pt_BR/README.md', title: 'Visão Geral do Workshop', number: '📚' },
+            { id: '00-prereqs', file: 'workshop/pt_BR/00-prereqs.md', title: 'Pré-requisitos', number: '00' },
+            { id: '01-custom-instructions', file: 'workshop/pt_BR/01-custom-instructions.md', title: 'Custom Instructions', number: '01' },
+            { id: '02-install-copilot-cli', file: 'workshop/pt_BR/02-install-copilot-cli.md', title: 'Instalar Copilot CLI', number: '02' },
+            { id: '03-mcp', file: 'workshop/pt_BR/03-mcp.md', title: 'Servidores MCP', number: '03' },
+            { id: '04-generating-code', file: 'workshop/pt_BR/04-generating-code.md', title: 'Gerando Código', number: '04' },
+            { id: '05-agent-skills', file: 'workshop/pt_BR/05-agent-skills.md', title: 'Agent Skills', number: '05' },
+            { id: '06-custom-agents', file: 'workshop/pt_BR/06-custom-agents.md', title: 'Custom Agents', number: '06' },
+            { id: '07-slash-commands', file: 'workshop/pt_BR/07-slash-commands.md', title: 'Slash Commands', number: '07' },
+            { id: '08-review', file: 'workshop/pt_BR/08-review.md', title: 'Revisão & Próximos Passos', number: '08' },
+        ];
+
+        const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
+        const GITHUB_RAW_BASE = isLocal ? '../../' : 'https://raw.githubusercontent.com/copilot-dev-days/tailspin-toys-workshop/main/';
+
+        let currentIndex = 0;
+
+        function getStepFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('step') || 'readme';
+        }
+
+        function buildSidebar() {
+            const nav = document.getElementById('stepNav');
+            nav.innerHTML = steps.map((step, i) => `
+                <a href="?step=${step.id}" class="step-link ${i === currentIndex ? 'active' : ''}" data-index="${i}">
+                    <span class="step-number">${step.number}</span>
+                    <span>${step.title}</span>
+                </a>
+            `).join('');
+        }
+
+        function updateNavButtons() {
+            document.getElementById('prevBtn').disabled = currentIndex === 0;
+            document.getElementById('nextBtn').disabled = currentIndex === steps.length - 1;
+        }
+
+        function buildFooterNav() {
+            const footer = document.getElementById('navFooter');
+            const prev = currentIndex > 0 ? steps[currentIndex - 1] : null;
+            const next = currentIndex < steps.length - 1 ? steps[currentIndex + 1] : null;
+            footer.innerHTML = `
+                <a href="${prev ? '?step=' + prev.id : '#'}" class="nav-footer-btn ${!prev ? 'disabled' : ''}">← ${prev ? prev.title : 'Anterior'}</a>
+                <a href="${next ? '?step=' + next.id : '#'}" class="nav-footer-btn ${!next ? 'disabled' : ''}">${next ? next.title : 'Próximo'} →</a>
+            `;
+        }
+
+        function navigate(direction) {
+            const newIndex = currentIndex + direction;
+            if (newIndex >= 0 && newIndex < steps.length) {
+                window.location.href = `?step=${steps[newIndex].id}`;
+            }
+        }
+
+        function processMarkdown(md) {
+            md = md.replace(/> \[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*\n((?:> .*(?:\n|$))*)/gi, function(match, type, content) {
+                const cleanContent = content.replace(/^> ?/gm, '').trim();
+                const icons = { NOTE: 'ℹ️', TIP: '💡', IMPORTANT: '❗', WARNING: '⚠️', CAUTION: '🔴' };
+                const colors = { NOTE: 'var(--neon-cyan)', TIP: 'var(--success-green)', IMPORTANT: 'var(--neon-purple)', WARNING: 'var(--warning-yellow)', CAUTION: '#ff6b6b' };
+                const icon = icons[type.toUpperCase()] || 'ℹ️';
+                const color = colors[type.toUpperCase()] || 'var(--neon-cyan)';
+                return `<blockquote style="border-left-color: ${color};"><p style="color: ${color};">${icon} ${type.toUpperCase()}</p><p>${cleanContent}</p></blockquote>\n`;
+            });
+
+            md = md.replace(/\[([^\]]+)\]\((?:\.\/)?workshop\/pt_BR\/(\d+)-([^)]+)\.md\)/g, function(match, text, num, slug) {
+                const stepId = num.replace(/^0+/, '0') + '-' + slug;
+                const found = steps.find(s => s.id === stepId || s.file === `workshop/pt_BR/${num}-${slug}.md`);
+                if (found) {
+                    return `[${text}](step.html?step=${found.id})`;
+                }
+                return match;
+            });
+
+            return md;
+        }
+
+        async function loadStep(stepId) {
+            const step = steps.find(s => s.id === stepId);
+            if (!step) {
+                document.getElementById('markdownContent').innerHTML = '<p>Passo não encontrado.</p>';
+                return;
+            }
+            currentIndex = steps.indexOf(step);
+            buildSidebar();
+            updateNavButtons();
+            buildFooterNav();
+            document.title = `${step.title} - Workshop GitHub Copilot CLI`;
+
+            const contentEl = document.getElementById('markdownContent');
+            contentEl.innerHTML = '<div class="loading">Carregando conteúdo</div>';
+
+            try {
+                const url = GITHUB_RAW_BASE + step.file;
+                const res = await fetch(url);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                let md = await res.text();
+                md = processMarkdown(md);
+                const stepDir = step.file.substring(0, step.file.lastIndexOf('/') + 1);
+                md = md.replace(/!\[([^\]]*)\]\((?!https?:\/\/|\/\/)([^)]+)\)/g, (match, alt, path) => {
+                    const cleanPath = path.replace(/^\.\//, '');
+                    return `![${alt}](${GITHUB_RAW_BASE}${stepDir}${cleanPath})`;
+                });
+                contentEl.innerHTML = `<div class="markdown">${marked.parse(md)}</div>`;
+
+                if (currentIndex === steps.length - 1 && typeof confetti === 'function') {
+                    confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+                }
+            } catch (err) {
+                contentEl.innerHTML = `
+                    <div class="markdown">
+                        <h1>${step.title}</h1>
+                        <p>Não foi possível carregar o conteúdo. Por favor, verifique o <a href="https://github.com/copilot-dev-days/tailspin-toys-workshop" target="_blank">repositório GitHub</a> diretamente.</p>
+                        <p style="color: var(--text-secondary); font-size: 0.875rem;">Erro: ${err.message}</p>
+                    </div>`;
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') navigate(-1);
+            if (e.key === 'ArrowRight') navigate(1);
+        });
+
+        loadStep(getStepFromURL());
+    </script>
+
+    <script>
+    (function(){
+      var match=location.pathname.match(/\/(pt_BR|es)\//);
+      var locale=match?match[1]:'en';
+      var picker=document.getElementById('localePicker');
+      if(!picker)return;
+      var btn=picker.querySelector('.locale-toggle'),list=picker.querySelector('ul');
+      list.querySelectorAll('li').forEach(function(li){
+        var l=li.dataset.locale==='pt-BR'?'pt_BR':li.dataset.locale;
+        if(l===locale){li.classList.add('active');li.setAttribute('aria-selected','true');}
+        else{li.classList.remove('active');li.setAttribute('aria-selected','false');}
+      });
+      function open(){list.style.display='block';btn.setAttribute('aria-expanded','true');}
+      function close(){list.style.display='none';btn.setAttribute('aria-expanded','false');}
+      btn.addEventListener('click',function(e){e.stopPropagation();list.style.display==='block'?close():open();});
+      document.addEventListener('click',close);
+      document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+      list.querySelectorAll('li').forEach(function(li){
+        li.addEventListener('click',function(e){
+          e.stopPropagation();
+          var t=li.dataset.locale==='pt-BR'?'pt_BR':li.dataset.locale;
+          if(t===locale){close();return;}
+          var p=location.pathname;
+          if(locale!=='en')p=p.replace(new RegExp('/'+locale+'/'),'/');;
+          if(t!=='en'){var base=p.replace(/\/index\.html$/,'/');if(!base.endsWith('/'))base+='/';p=base+t+'/';}
+          localStorage.setItem('preferred-locale',t);
+          window.location.href=p;
+        });
+      });
+    })();
+    </script>
+</body>
+</html>

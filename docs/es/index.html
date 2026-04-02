@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LSC44NDPLQ"></script>
@@ -11,50 +11,50 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Copilot CLI Workshop</title>
+    <title>Taller GitHub Copilot CLI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="alternate" hreflang="en" href="https://copilot-dev-days.github.io/tailspin-toys-workshop/">
     <link rel="alternate" hreflang="pt-BR" href="https://copilot-dev-days.github.io/tailspin-toys-workshop/pt_BR/">
     <link rel="alternate" hreflang="es" href="https://copilot-dev-days.github.io/tailspin-toys-workshop/es/">
     <link rel="alternate" hreflang="x-default" href="https://copilot-dev-days.github.io/tailspin-toys-workshop/">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="light-theme.css">
-    <script src="theme-toggle.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../light-theme.css">
+    <script src="../theme-toggle.js"></script>
 </head>
 <body>
     <div style="position:fixed;top:1rem;right:1rem;z-index:1000;display:flex;gap:0.5rem;align-items:center;">
         <div class="locale-picker" id="localePicker">
-            <button type="button" class="locale-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">🌐</button>
-            <ul role="listbox" aria-label="Language">
-                <li role="option" data-locale="en" aria-selected="true" class="active">🇬🇧 English</li>
-                <li role="option" data-locale="es" aria-selected="false">🇪🇸 Español</li>
+            <button type="button" class="locale-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Seleccionar idioma">🌐</button>
+            <ul role="listbox" aria-label="Idioma">
+                <li role="option" data-locale="en" aria-selected="false">🇬🇧 English</li>
+                <li role="option" data-locale="es" aria-selected="true" class="active">🇪🇸 Español</li>
                 <li role="option" data-locale="pt-BR" aria-selected="false">🇧🇷 Português (Brasil)</li>
             </ul>
         </div>
-        <button class="theme-toggle" onclick="toggleTheme()">☀️ Light</button>
+        <button class="theme-toggle" onclick="toggleTheme()">☀️ Claro</button>
     </div>
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">💻 Terminal + AI-Powered Development</div>
-            <h1>GitHub Copilot CLI Workshop</h1>
-            <p class="hero-subtitle">Master GitHub Copilot in the terminal. From custom instructions to MCP servers and custom agents — a 90-minute hands-on workshop with the Tailspin Toys project.</p>
+            <div class="hero-badge">💻 Terminal + Desarrollo con IA</div>
+            <h1>Taller GitHub Copilot CLI</h1>
+            <p class="hero-subtitle">Domina GitHub Copilot en la terminal. Desde custom instructions hasta servidores MCP y custom agents — un taller práctico de 90 minutos con el proyecto Tailspin Toys.</p>
             <div class="hero-cta">
-                <a href="step.html?step=readme" class="btn btn-primary">🚀 Start Workshop</a>
-                <a href="https://github.com/copilot-dev-days/tailspin-toys-workshop" class="btn btn-secondary" target="_blank">⭐ GitHub Repo</a>
+                <a href="step.html?step=readme" class="btn btn-primary">🚀 Iniciar Taller</a>
+                <a href="https://github.com/copilot-dev-days/tailspin-toys-workshop" class="btn btn-secondary" target="_blank">⭐ Repositorio GitHub</a>
             </div>
             <div class="stats">
                 <div class="stat">
                     <div class="stat-value">~90min</div>
-                    <div class="stat-label">Duration</div>
+                    <div class="stat-label">Duración</div>
                 </div>
                 <div class="stat">
                     <div class="stat-value">9</div>
-                    <div class="stat-label">Exercises</div>
+                    <div class="stat-label">Ejercicios</div>
                 </div>
                 <div class="stat">
                     <div class="stat-value">1</div>
-                    <div class="stat-label">Workshop</div>
+                    <div class="stat-label">Taller</div>
                 </div>
             </div>
         </div>
@@ -62,27 +62,27 @@
 
     <section class="features">
         <div class="container">
-            <h2 class="section-title">What You'll Learn</h2>
+            <h2 class="section-title">Lo que Aprenderás</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">📝</div>
                     <h3>Custom Instructions</h3>
-                    <p>Configure Copilot with project-specific context files for more accurate, relevant code generation.</p>
+                    <p>Configura Copilot con archivos de contexto específicos del proyecto para una generación de código más precisa y relevante.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🔌</div>
-                    <h3>MCP Servers</h3>
-                    <p>Extend Copilot's capabilities with Model Context Protocol servers for enhanced tool integration.</p>
+                    <h3>Servidores MCP</h3>
+                    <p>Extiende las capacidades de Copilot con servidores Model Context Protocol para una integración mejorada de herramientas.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🤖</div>
                     <h3>Custom Agents</h3>
-                    <p>Build specialized agents with custom prompts and skills tailored to your workflow.</p>
+                    <p>Crea agentes especializados con prompts y habilidades personalizadas adaptadas a tu flujo de trabajo.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
                     <h3>Agent Skills</h3>
-                    <p>Create reusable skill definitions that give agents domain-specific expertise.</p>
+                    <p>Crea definiciones de habilidades reutilizables que dan a los agentes experiencia en dominios específicos.</p>
                 </div>
             </div>
         </div>
@@ -90,21 +90,21 @@
 
     <section class="workshop">
         <div class="container">
-            <h2 class="section-title">Workshop Parts</h2>
+            <h2 class="section-title">Partes del Taller</h2>
             <div class="parts-list">
                 <a href="step.html?step=readme" class="part-card">
                     <div class="part-number">📚</div>
                     <div class="part-content">
-                        <h3>Workshop Overview</h3>
-                        <p>Introduction and learning objectives</p>
+                        <h3>Descripción General del Taller</h3>
+                        <p>Introducción y objetivos de aprendizaje</p>
                     </div>
                     <span class="part-time">5 min</span>
                 </a>
                 <a href="step.html?step=00-prereqs" class="part-card">
                     <div class="part-number">00</div>
                     <div class="part-content">
-                        <h3>Prerequisites</h3>
-                        <p>Set up your environment</p>
+                        <h3>Requisitos Previos</h3>
+                        <p>Configura tu entorno</p>
                     </div>
                     <span class="part-time">10 min</span>
                 </a>
@@ -112,31 +112,31 @@
                     <div class="part-number">01</div>
                     <div class="part-content">
                         <h3>Custom Instructions</h3>
-                        <p>Provide context to Copilot with instruction files</p>
+                        <p>Proporciona contexto a Copilot con archivos de instrucciones</p>
                     </div>
                     <span class="part-time">10 min</span>
                 </a>
                 <a href="step.html?step=02-install-copilot-cli" class="part-card">
                     <div class="part-number">02</div>
                     <div class="part-content">
-                        <h3>Install Copilot CLI</h3>
-                        <p>Set up GitHub Copilot in the terminal</p>
+                        <h3>Instalar Copilot CLI</h3>
+                        <p>Configura GitHub Copilot en la terminal</p>
                     </div>
                     <span class="part-time">10 min</span>
                 </a>
                 <a href="step.html?step=03-mcp" class="part-card">
                     <div class="part-number">03</div>
                     <div class="part-content">
-                        <h3>MCP Servers</h3>
-                        <p>Use MCP servers with Copilot CLI</p>
+                        <h3>Servidores MCP</h3>
+                        <p>Usa servidores MCP con Copilot CLI</p>
                     </div>
                     <span class="part-time">10 min</span>
                 </a>
                 <a href="step.html?step=04-generating-code" class="part-card">
                     <div class="part-number">04</div>
                     <div class="part-content">
-                        <h3>Generating Code</h3>
-                        <p>Add features with Copilot CLI</p>
+                        <h3>Generando Código</h3>
+                        <p>Añade funcionalidades con Copilot CLI</p>
                     </div>
                     <span class="part-time">15 min</span>
                 </a>
@@ -144,7 +144,7 @@
                     <div class="part-number">05</div>
                     <div class="part-content">
                         <h3>Agent Skills</h3>
-                        <p>Use agent skills for specialized tasks</p>
+                        <p>Usa habilidades de agente para tareas especializadas</p>
                     </div>
                     <span class="part-time">10 min</span>
                 </a>
@@ -152,7 +152,7 @@
                     <div class="part-number">06</div>
                     <div class="part-content">
                         <h3>Custom Agents</h3>
-                        <p>Create custom agent definitions</p>
+                        <p>Crea definiciones de agentes personalizados</p>
                     </div>
                     <span class="part-time">10 min</span>
                 </a>
@@ -160,15 +160,15 @@
                     <div class="part-number">07</div>
                     <div class="part-content">
                         <h3>Slash Commands</h3>
-                        <p>Use slash commands in Copilot CLI</p>
+                        <p>Usa slash commands en Copilot CLI</p>
                     </div>
                     <span class="part-time">10 min</span>
                 </a>
                 <a href="step.html?step=08-review" class="part-card">
                     <div class="part-number">08</div>
                     <div class="part-content">
-                        <h3>Review & Next Steps</h3>
-                        <p>Recap and continue your learning</p>
+                        <h3>Revisión y Próximos Pasos</h3>
+                        <p>Recapitulación y continúa aprendiendo</p>
                     </div>
                     <span class="part-time">5 min</span>
                 </a>
@@ -178,11 +178,11 @@
 
     <section class="prereqs">
         <div class="container">
-            <h2 class="section-title">Prerequisites</h2>
+            <h2 class="section-title">Requisitos Previos</h2>
             <div class="prereqs-grid">
                 <div class="prereq-item">
                     <span class="prereq-check">✓</span>
-                    <span>VS Code or Terminal</span>
+                    <span>VS Code o Terminal</span>
                 </div>
                 <div class="prereq-item">
                     <span class="prereq-check">✓</span>
@@ -194,7 +194,7 @@
                 </div>
                 <div class="prereq-item">
                     <span class="prereq-check">✓</span>
-                    <span>Git installed</span>
+                    <span>Git instalado</span>
                 </div>
             </div>
         </div>
@@ -203,13 +203,14 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="https://github.com/copilot-dev-days/tailspin-toys-workshop" target="_blank">GitHub Repository</a>
-                <a href="https://code.visualstudio.com/docs/copilot/overview" target="_blank">Copilot Docs</a>
+                <a href="https://github.com/copilot-dev-days/tailspin-toys-workshop" target="_blank">Repositorio GitHub</a>
+                <a href="https://code.visualstudio.com/docs/copilot/overview" target="_blank">Docs de Copilot</a>
                 <a href="https://github.com/github/awesome-copilot" target="_blank">Awesome Copilot</a>
             </div>
-            <p class="footer-credit">Built with 💜 by the GitHub Copilot Team</p>
+            <p class="footer-credit">Hecho con 💜 por el equipo de GitHub Copilot</p>
         </div>
     </footer>
+
     <script>
     (function(){
       var match=location.pathname.match(/\/(pt_BR|es)\//);

@@ -1,3 +1,5 @@
+🌐 [Português (Brasil)](README.pt_BR.md) | [Español](README.es.md)
+
 # Tailspin Toys
 
 This repository contains the project for a guided workshop to explore GitHub Copilot CLI. The project is a website for a fictional game crowd-funding company, with a [Flask](https://flask.palletsprojects.com/en/stable/) backend using [SQLAlchemy](https://www.sqlalchemy.org/) and [Astro](https://astro.build/) frontend using [Svelte](https://svelte.dev/) for dynamic pages.
